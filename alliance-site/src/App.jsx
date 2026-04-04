@@ -20,7 +20,7 @@ export default function HeroHeader() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/back-layer.jpg')", // ← замени на свою заднюю фото
+          backgroundImage: "url('/images/back.png')", // ← замени на свою заднюю фото
           transform: `translateY(${scrollY * 0.3}px)`, // лёгкий parallax
         }}
       />
@@ -29,7 +29,7 @@ export default function HeroHeader() {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-75"
         style={{
-          backgroundImage: "url('/images/front-layer.jpg')", // ← замени на свою переднюю фото
+          backgroundImage: "url('/images/toward.png')", // ← замени на свою переднюю фото
           opacity: 0.85 + (scrollY > 100 ? 0 : 0), // можно добавить fade при скролле
           transform: `translateY(${scrollY * 0.6}px)`,
         }}
