@@ -1,14 +1,14 @@
 ---
 const navItems = [
-    { label: "Главная", href: "/" },
-    { label: "Продукция", href: "#products" },
-    { label: "Преимущества", href: "#benefits" },
-    { label: "Схема работы", href: "#steps" },
-    { label: "Контакты", href: "#contacts" },
+    { label: "Каталог", href: "/catalog" },
+    { label: "Отрасли", href: "/industries" },
+    { label: "О компании", href: "/about" },
+    { label: "Доставка", href: "/delivery" },
+    { label: "Контакты", href: "/contacts" },
 ];
 ---
 
-<header class="site-header">
+<header class="site-header" id="siteHeader" data-header>
     <div class="site-header__top">
         <div class="container site-header__top-inner">
             <a class="site-header__mail" href="mailto:pskov@e-salt.ru">
@@ -66,7 +66,7 @@ const navItems = [
                     ))}
                 </ul>
 
-                <a class="btn btn--primary site-header__cta" href="#contacts">
+                <a class="btn btn--primary site-header__cta" href="/contacts">
                     Оставить заявку
                 </a>
             </nav>
@@ -75,8 +75,23 @@ const navItems = [
 </header>
 
 <script>
+    const header = document.querySelector("[data-header]");
     const toggleButton = document.querySelector("[data-menu-toggle]");
     const menu = document.querySelector("[data-menu]");
+    const hero = document.querySelector("#hero");
+
+    if (header && hero) {
+        const updateHeaderState = () => {
+            const heroBottom = hero.getBoundingClientRect().bottom;
+            const shouldStick = heroBottom <= 0;
+
+            header.classList.toggle("is-sticky", shouldStick);
+        };
+
+        updateHeaderState();
+        window.addEventListener("scroll", updateHeaderState, { passive: true });
+        window.addEventListener("resize", updateHeaderState);
+    }
 
     if (toggleButton && menu) {
         toggleButton.addEventListener("click", () => {
@@ -107,22 +122,38 @@ const navItems = [
 
 <style>
     .site-header {
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
         z-index: 100;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+                transform 0.35s ease,
+                opacity 0.35s ease,
+                box-shadow 0.35s ease,
+                background-color 0.35s ease;
         background: rgba(255, 255, 255, 0.92);
         backdrop-filter: blur(16px);
         border-bottom: 1px solid rgba(226, 232, 240, 0.9);
     }
 
+    .site-header.is-sticky {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
     .site-header__top {
         border-bottom: 1px solid rgba(226, 232, 240, 0.9);
-        background:
-                linear-gradient(
-                        90deg,
-                        rgba(248, 250, 252, 0.94) 0%,
-                        rgba(255, 255, 255, 0.98) 100%
-                );
+        background: linear-gradient(
+                90deg,
+                rgba(248, 250, 252, 0.94) 0%,
+                rgba(255, 255, 255, 0.98) 100%
+        );
     }
 
     .site-header__top-inner {
@@ -182,8 +213,7 @@ const navItems = [
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        background:
-                linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
+        background: linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
         color: #ffffff;
         font-size: 22px;
         font-weight: 800;

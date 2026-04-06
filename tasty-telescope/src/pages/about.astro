@@ -1,0 +1,139 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout title="О компании — ООО Альянс">
+    <Header />
+
+    <main class="inner-page">
+        <section class="inner-hero">
+            <div class="container">
+                <span class="inner-hero__eyebrow">О компании</span>
+                <h1 class="inner-hero__title">Надёжный поставщик продукции для B2B</h1>
+                <p class="inner-hero__text">
+                    Работаем с предприятиями, производством, складами, снабжением и
+                    сервисными компаниями, где важны сроки, объёмы и прозрачные условия.
+                </p>
+            </div>
+        </section>
+
+        <section class="inner-section">
+            <div class="container">
+                <div class="about-layout">
+                    <article class="about-card">
+                        <h2>Что для нас важно</h2>
+                        <p>
+                            Мы выстраиваем работу так, чтобы клиент быстро получил понятное
+                            предложение, согласовал условия и закрыл задачу по поставке без
+                            лишней бюрократии.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h2>Как мы работаем</h2>
+                        <p>
+                            Уточняем задачу, подбираем продукцию, согласовываем объём, формат
+                            поставки, документы и сопровождаем заявку до отгрузки.
+                        </p>
+                    </article>
+
+                    <article class="about-card">
+                        <h2>Для кого</h2>
+                        <p>
+                            Для компаний, которым нужен стабильный поставщик соли и
+                            сопутствующих решений для регулярных или сезонных закупок.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .inner-page {
+        padding-top: 122px;
+    }
+
+    .inner-hero {
+        padding: 72px 0 36px;
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, #ffffff 100%);
+    }
+
+    .inner-hero__eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .inner-hero__title {
+        margin: 0;
+        font-size: clamp(40px, 5vw, 64px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    .inner-hero__text {
+        max-width: 760px;
+        margin: 18px 0 0;
+        font-size: 18px;
+        color: var(--color-text-soft);
+    }
+
+    .inner-section {
+        padding: 24px 0 96px;
+    }
+
+    .about-layout {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .about-card {
+        padding: 28px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .about-card h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        line-height: 1.15;
+    }
+
+    .about-card p {
+        margin: 0;
+        color: var(--color-text-soft);
+    }
+
+    @media (max-width: 900px) {
+        .about-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .inner-page {
+            padding-top: 88px;
+        }
+
+        .inner-hero {
+            padding: 44px 0 24px;
+        }
+
+        .about-card {
+            padding: 22px;
+        }
+    }
+</style>

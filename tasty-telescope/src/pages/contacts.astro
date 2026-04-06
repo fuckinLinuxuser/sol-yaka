@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+---
+
+<BaseLayout title="Контакты — ООО Альянс">
+    <Header />
+
+    <main class="inner-page">
+        <section class="inner-hero">
+            <div class="container">
+                <span class="inner-hero__eyebrow">Контакты</span>
+                <h1 class="inner-hero__title">Свяжитесь с нами</h1>
+                <p class="inner-hero__text">
+                    Уточним задачу, объём, формат поставки и подготовим предложение под ваш
+                    запрос.
+                </p>
+            </div>
+        </section>
+
+        <section class="inner-section">
+            <div class="container">
+                <div class="contacts-layout">
+                    <article class="contacts-card">
+                        <h2>Телефоны</h2>
+                        <div class="contacts-links">
+                            <a href="tel:+78112702529">8 (8112) 70-25-29</a>
+                            <a href="tel:+79215080190">8 (921) 508-01-90</a>
+                        </div>
+                    </article>
+
+                    <article class="contacts-card">
+                        <h2>E-mail</h2>
+                        <a href="mailto:pskov@e-salt.ru">pskov@e-salt.ru</a>
+                    </article>
+
+                    <article class="contacts-card">
+                        <h2>Режим работы</h2>
+                        <p>Пн–Пт: 08:00–17:00</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .inner-page {
+        padding-top: 122px;
+    }
+
+    .inner-hero {
+        padding: 72px 0 36px;
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, #ffffff 100%);
+    }
+
+    .inner-hero__eyebrow {
+        display: inline-block;
+        margin-bottom: 14px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .inner-hero__title {
+        margin: 0;
+        font-size: clamp(40px, 5vw, 64px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+    }
+
+    .inner-hero__text {
+        max-width: 760px;
+        margin: 18px 0 0;
+        font-size: 18px;
+        color: var(--color-text-soft);
+    }
+
+    .inner-section {
+        padding: 24px 0 96px;
+    }
+
+    .contacts-layout {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+    }
+
+    .contacts-card {
+        padding: 28px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .contacts-card h2 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        line-height: 1.15;
+    }
+
+    .contacts-card p,
+    .contacts-card a {
+        margin: 0;
+        color: var(--color-text-soft);
+    }
+
+    .contacts-links {
+        display: grid;
+        gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+        .contacts-layout {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 720px) {
+        .inner-page {
+            padding-top: 88px;
+        }
+
+        .inner-hero {
+            padding: 44px 0 24px;
+        }
+
+        .contacts-card {
+            padding: 22px;
+        }
+    }
+</style>

@@ -1,0 +1,244 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+
+const catalogItems = [
+    {
+        title: "Соль для домохозяйств",
+        image: "/images/catalog/household_salt.png",
+        href: "#",
+    },
+    {
+        title: "Соль для производств: морская + выварочная + крупная",
+        image: "/images/catalog/salt_for_production.png",
+        href: "#",
+    },
+    {
+        title: "Соль таблетированная для производств",
+        image: "/images/catalog/tableted_salt.png",
+        href: "#",
+    },
+    {
+        title: "Соль гранулированная для производств",
+        image: "/images/catalog/granulated_salt_for_production.png",
+        href: "#",
+    },
+    {
+        title: "Соль для промышленного назначения",
+        image: "/images/catalog/industrial_salt.png",
+        href: "#",
+    },
+    {
+        title: "Реагенты противогололедные UOKSA",
+        image: "/images/catalog/deicing_reagents.png",
+        href: "#",
+    },
+    {
+        title: "Соль для SPA и бассейнов",
+        image: "/images/catalog/salt_for_the_spa.png",
+        href: "#",
+    },
+    {
+        title: "Соль для животноводства",
+        image: "/images/catalog/salt_for_animal_husbandry.png",
+        href: "#",
+    },
+];
+---
+
+<BaseLayout title="Каталог продукции — ООО Альянс">
+    <Header />
+
+    <main class="catalog-page">
+        <section class="catalog-hero">
+            <div class="container">
+                <span class="catalog-hero__eyebrow">Каталог продукции</span>
+                <h1 class="catalog-hero__title">Каталог продукции</h1>
+                <p class="catalog-hero__text">
+                    Выберите нужный раздел продукции и перейдите к подробной информации.
+                </p>
+            </div>
+        </section>
+
+        <section class="catalog-grid-section">
+            <div class="container">
+                <div class="catalog-grid">
+                    {catalogItems.map((item) => (
+                            <a class="catalog-card" href={item.href} aria-label={item.title}>
+                                <div class="catalog-card__image-wrap">
+                                    <img
+                                            src={item.image}
+                                            alt={item.title}
+                                            class="catalog-card__image"
+                                            loading="lazy"
+                                            decoding="async"
+                                    />
+                                </div>
+
+                                <div class="catalog-card__overlay">
+                                    <h2 class="catalog-card__title">{item.title}</h2>
+                                </div>
+                            </a>
+                    ))}
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</BaseLayout>
+
+<style>
+    .catalog-page {
+        padding-top: 122px;
+    }
+
+    .catalog-hero {
+        padding: 56px 0 28px;
+        background: linear-gradient(180deg, rgba(248, 250, 252, 0.96) 0%, #ffffff 100%);
+    }
+
+    .catalog-hero__eyebrow {
+        display: inline-block;
+        margin-bottom: 12px;
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-primary);
+    }
+
+    .catalog-hero__title {
+        margin: 0;
+        font-size: clamp(38px, 5vw, 62px);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        color: var(--color-text);
+    }
+
+    .catalog-hero__text {
+        max-width: 720px;
+        margin: 16px 0 0;
+        font-size: 18px;
+        color: var(--color-text-soft);
+    }
+
+    .catalog-grid-section {
+        padding: 0 0 96px;
+    }
+
+    .catalog-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0;
+        overflow: hidden;
+        background: #d9d9d9;
+    }
+
+    .catalog-card {
+        position: relative;
+        display: block;
+        min-height: 340px;
+        background: #ececec;
+        overflow: hidden;
+        text-decoration: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.35);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    }
+
+    .catalog-card__image-wrap {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        overflow: hidden;
+    }
+
+    .catalog-card__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: scale(1);
+        transition: transform 0.45s ease;
+        will-change: transform;
+    }
+
+    .catalog-card__overlay {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        min-height: 86px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 16px;
+        background: rgba(102, 102, 102, 0.68);
+        backdrop-filter: blur(2px);
+        text-align: center;
+    }
+
+    .catalog-card__title {
+        margin: 0;
+        font-size: 18px;
+        line-height: 1.28;
+        font-weight: 500;
+        color: #ffffff;
+    }
+
+    .catalog-card:hover .catalog-card__image {
+        transform: scale(1.06);
+    }
+
+    .catalog-card:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.45);
+        outline-offset: -3px;
+        z-index: 2;
+    }
+
+    @media (max-width: 1100px) {
+        .catalog-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+    }
+
+    @media (max-width: 860px) {
+        .catalog-page {
+            padding-top: 88px;
+        }
+
+        .catalog-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .catalog-card {
+            min-height: 300px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .catalog-hero {
+            padding: 40px 0 20px;
+        }
+
+        .catalog-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .catalog-card {
+            min-height: 280px;
+        }
+
+        .catalog-card__overlay {
+            min-height: 82px;
+            padding: 16px 14px;
+        }
+
+        .catalog-card__title {
+            font-size: 17px;
+        }
+    }
+</style>

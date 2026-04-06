@@ -1,339 +1,161 @@
-<section class="section section--soft industries-section">
+---
+const industries = [
+    {
+        title: "Производственные предприятия",
+        text: "Поставки соли для технологических процессов, обслуживания оборудования и производственных задач.",
+    },
+    {
+        title: "Пищевая отрасль",
+        text: "Решения для пищевого производства, фасовки, переработки и предприятий общественного питания.",
+    },
+    {
+        title: "Водоподготовка и сервис",
+        text: "Таблетированная соль для систем водоочистки, фильтрации и инженерной инфраструктуры.",
+    },
+    {
+        title: "Склады и логистика",
+        text: "Материалы для эксплуатации объектов, сезонного обслуживания территорий и бесперебойной работы площадок.",
+    },
+    {
+        title: "Дорожные и коммунальные службы",
+        text: "Противогололедные материалы для дорог, тротуаров, промышленных и общественных территорий.",
+    },
+    {
+        title: "Оптовые компании и снабжение",
+        text: "Регулярные поставки продукции для дальнейшей реализации, комплектации заказов и корпоративных закупок.",
+    },
+];
+---
+
+<section class="industries section" id="industries">
     <div class="container">
-        <div class="section-head industries-section__head">
-            <span class="section-kicker">С кем работаем</span>
-            <h2>От торговли до дорожных служб — в одном понятном блоке</h2>
-            <p>
-                Вместо сухого перечисления логотипов секция собрана как живой
-                интерактивный слайдер. Это помогает быстро показать спектр клиентов и
-                масштаб применения продукции.
+        <div class="section-heading">
+            <span class="section-heading__eyebrow">Отрасли</span>
+            <h2 class="section-heading__title">
+                Для каких сфер бизнеса мы поставляем продукцию
+            </h2>
+            <p class="section-heading__text">
+                Работаем с B2B-клиентами, которым важны стабильные поставки, документы,
+                понятные условия и возможность закупать нужные объёмы без лишней
+                бюрократии.
             </p>
         </div>
 
-        <div class="industries-slider" data-industries-slider>
-            <div class="industries-slider__controls">
-                <button
-                        class="industries-slider__button"
-                        type="button"
-                        aria-label="Прокрутить список сфер назад"
-                        data-industries-prev
-                >
-                    ←
-                </button>
+        <div class="industries__grid">
+            {industries.map((industry) => (
+                    <article class="industries-card">
+                        <div class="industries-card__top">
+                            <span class="industries-card__badge">B2B</span>
+                        </div>
 
-                <button
-                        class="industries-slider__button"
-                        type="button"
-                        aria-label="Прокрутить список сфер вперед"
-                        data-industries-next
-                >
-                    →
-                </button>
-            </div>
+                        <h3 class="industries-card__title">{industry.title}</h3>
+                        <p class="industries-card__text">{industry.text}</p>
 
-            <div class="industries-slider__track" data-industries-track>
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--retail">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <rect x="90" y="116" width="340" height="132" rx="18" fill="#dbeafe" />
-                            <rect x="116" y="88" width="288" height="54" rx="16" fill="#1d4ed8" />
-                            <rect x="138" y="174" width="68" height="74" rx="10" fill="#ffffff" />
-                            <rect x="230" y="174" width="68" height="74" rx="10" fill="#ffffff" />
-                            <rect x="322" y="174" width="68" height="74" rx="10" fill="#ffffff" />
-                            <path d="M152 116c0-22 16-42 38-42 24 0 38 20 38 42M244 116c0-22 16-42 38-42 24 0 38 20 38 42M336 116c0-22 16-42 38-42 24 0 38 20 38 42" fill="none" stroke="#bfdbfe" stroke-width="8" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Розничные сети и торговые компании</h3>
-                        <p>
-                            Для компаний, которым важен ассортимент, понятная фасовка и
-                            регулярность поставок под продажи.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--food">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <rect x="86" y="182" width="348" height="68" rx="18" fill="#cbd5e1" />
-                            <rect x="108" y="120" width="76" height="72" rx="12" fill="#1d4ed8" />
-                            <rect x="200" y="98" width="92" height="94" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="6" />
-                            <rect x="312" y="84" width="96" height="108" rx="16" fill="#ffffff" stroke="#cbd5e1" stroke-width="6" />
-                            <circle cx="246" cy="144" r="20" fill="#93c5fd" />
-                            <rect x="330" y="116" width="58" height="12" rx="6" fill="#1d4ed8" />
-                            <rect x="330" y="138" width="46" height="10" rx="5" fill="#93c5fd" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Пищевые производства</h3>
-                        <p>
-                            Подходит для предприятий, где важны стабильность закупки, объём и
-                            понятная производственная логистика.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--industry">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <path d="M90 236V128l62 42v-42l62 42v-42l80 56v52z" fill="#cbd5e1" />
-                            <rect x="306" y="110" width="126" height="126" rx="18" fill="#e2e8f0" />
-                            <rect x="330" y="80" width="26" height="54" rx="10" fill="#94a3b8" />
-                            <rect x="368" y="62" width="26" height="72" rx="10" fill="#94a3b8" />
-                            <rect x="114" y="204" width="26" height="32" rx="8" fill="#94a3b8" />
-                            <rect x="154" y="204" width="26" height="32" rx="8" fill="#94a3b8" />
-                            <rect x="344" y="142" width="52" height="12" rx="6" fill="#0f172a" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Химические и промышленные предприятия</h3>
-                        <p>
-                            Рациональный формат для компаний, которым нужны поставки под
-                            эксплуатационные и производственные процессы.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--water">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <path d="M164 84c38 46 64 84 64 116 0 38-28 68-64 68s-64-30-64-68c0-32 26-70 64-116z" fill="#93c5fd" />
-                            <path d="M316 84c38 46 64 84 64 116 0 38-28 68-64 68s-64-30-64-68c0-32 26-70 64-116z" fill="#1d4ed8" opacity="0.82" />
-                            <rect x="208" y="226" width="104" height="18" rx="9" fill="#cbd5e1" />
-                            <rect x="196" y="246" width="128" height="14" rx="7" fill="#e2e8f0" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Водоочистка и инженерные системы</h3>
-                        <p>
-                            Для сервисных компаний, объектов и предприятий, где используется
-                            таблетированная соль для водоподготовки.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--logistics">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <rect x="86" y="158" width="188" height="74" rx="18" fill="#dbeafe" />
-                            <rect x="274" y="180" width="96" height="52" rx="16" fill="#93c5fd" />
-                            <rect x="340" y="146" width="92" height="86" rx="18" fill="#1d4ed8" />
-                            <circle cx="146" cy="248" r="22" fill="#0f172a" />
-                            <circle cx="322" cy="248" r="22" fill="#0f172a" />
-                            <circle cx="390" cy="248" r="22" fill="#0f172a" />
-                            <rect x="118" y="182" width="88" height="14" rx="7" fill="#1d4ed8" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Складские комплексы и логистика</h3>
-                        <p>
-                            Удобно для компаний, у которых закупка привязана к нескольким
-                            площадкам, объектам или графику отгрузки.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="industry-card card">
-                    <div class="industry-card__media industry-card__media--road">
-                        <svg viewBox="0 0 520 320" aria-hidden="true">
-                            <rect width="520" height="320" rx="32" fill="#ffffff" />
-                            <path d="M120 264L228 60h64l108 204z" fill="#cbd5e1" />
-                            <path d="M236 264l58-204h24l58 204z" fill="#94a3b8" />
-                            <path d="M260 92h16M250 116h36M238 144h60" stroke="#ffffff" stroke-width="8" stroke-linecap="round" />
-                            <circle cx="132" cy="116" r="22" fill="#dbeafe" />
-                            <path d="M132 96v40M112 116h40M118 102l28 28M146 102l-28 28" stroke="#60a5fa" stroke-width="5" stroke-linecap="round" />
-                        </svg>
-                    </div>
-
-                    <div class="industry-card__body">
-                        <h3>Дорожные и эксплуатационные службы</h3>
-                        <p>
-                            Сценарий для сезонной работы с территориями, дорогами, подъездами
-                            и объектами с повышенными требованиями к оперативности.
-                        </p>
-                    </div>
-                </article>
-            </div>
+                        <a class="industries-card__link" href="#contacts">
+                            Обсудить поставку
+                        </a>
+                    </article>
+            ))}
         </div>
     </div>
 </section>
 
-<script>
-    const industriesRoot = document.querySelector("[data-industries-slider]");
-
-    if (industriesRoot) {
-        const track = industriesRoot.querySelector("[data-industries-track]");
-        const prevButton = industriesRoot.querySelector("[data-industries-prev]");
-        const nextButton = industriesRoot.querySelector("[data-industries-next]");
-
-        const getStep = () => {
-            const card = track?.querySelector(".industry-card");
-            if (!card) return 360;
-            return card.getBoundingClientRect().width + 24;
-        };
-
-        const updateButtons = () => {
-            if (!track || !prevButton || !nextButton) return;
-
-            const maxScrollLeft = track.scrollWidth - track.clientWidth - 4;
-
-            prevButton.disabled = track.scrollLeft <= 4;
-            nextButton.disabled = track.scrollLeft >= maxScrollLeft;
-        };
-
-        prevButton?.addEventListener("click", () => {
-            track?.scrollBy({
-                left: -getStep(),
-                behavior: "smooth",
-            });
-        });
-
-        nextButton?.addEventListener("click", () => {
-            track?.scrollBy({
-                left: getStep(),
-                behavior: "smooth",
-            });
-        });
-
-        track?.addEventListener("scroll", updateButtons, { passive: true });
-        window.addEventListener("resize", updateButtons);
-
-        updateButtons();
-    }
-</script>
-
 <style>
-    .industries-section {
-        scroll-margin-top: 104px;
+    .industries {
+        background:
+                linear-gradient(
+                        180deg,
+                        rgba(248, 250, 252, 0.72) 0%,
+                        rgba(255, 255, 255, 1) 100%
+                );
     }
 
-    .industries-section__head {
-        margin-bottom: 34px;
-    }
-
-    .industries-slider {
+    .industries__grid {
         display: grid;
-        gap: 20px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
     }
 
-    .industries-slider__controls {
+    .industries-card {
         display: flex;
-        justify-content: flex-end;
-        gap: 10px;
+        flex-direction: column;
+        min-height: 100%;
+        padding: 28px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
+        transition:
+                transform var(--transition),
+                box-shadow var(--transition),
+                border-color var(--transition);
     }
 
-    .industries-slider__button {
+    .industries-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(37, 99, 235, 0.22);
+        box-shadow: var(--shadow-md);
+    }
+
+    .industries-card__top {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 18px;
+    }
+
+    .industries-card__badge {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 52px;
-        height: 52px;
-        border: 1px solid #cbd5e1;
-        border-radius: 16px;
-        background: #ffffff;
-        color: #0f172a;
-        font-size: 20px;
-        font-weight: 700;
-        cursor: pointer;
-        transition:
-                transform 0.2s ease,
-                border-color 0.2s ease,
-                opacity 0.2s ease;
+        min-height: 32px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(37, 99, 235, 0.1);
+        color: var(--color-primary);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
     }
 
-    .industries-slider__button:hover:not(:disabled) {
-        transform: translateY(-1px);
-        border-color: #94a3b8;
-    }
-
-    .industries-slider__button:disabled {
-        opacity: 0.45;
-        cursor: not-allowed;
-    }
-
-    .industries-slider__track {
-        display: grid;
-        grid-auto-flow: column;
-        grid-auto-columns: minmax(280px, 32%);
-        gap: 24px;
-        overflow-x: auto;
-        padding-bottom: 6px;
-        scroll-snap-type: x mandatory;
-        scrollbar-width: thin;
-        scrollbar-color: #cbd5e1 transparent;
-    }
-
-    .industry-card {
-        overflow: hidden;
-        scroll-snap-align: start;
-    }
-
-    .industry-card__media {
-        min-height: 210px;
-        border-bottom: 1px solid #e2e8f0;
-    }
-
-    .industry-card__body {
-        display: grid;
-        gap: 12px;
-        padding: 24px;
-    }
-
-    .industry-card h3 {
-        margin: 0;
+    .industries-card__title {
+        margin: 0 0 12px;
         font-size: 22px;
         line-height: 1.2;
-        letter-spacing: -0.02em;
-        color: #0f172a;
+        font-weight: 800;
+        color: var(--color-text);
     }
 
-    .industry-card p {
+    .industries-card__text {
         margin: 0;
-        color: #475569;
-        line-height: 1.7;
+        color: var(--color-text-soft);
     }
 
-    @media (max-width: 1180px) {
-        .industries-slider__track {
-            grid-auto-columns: minmax(280px, 60%);
+    .industries-card__link {
+        margin-top: auto;
+        padding-top: 18px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    @media (max-width: 1100px) {
+        .industries__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    @media (max-width: 767px) {
-        .industries-slider__controls {
-            justify-content: space-between;
+    @media (max-width: 640px) {
+        .industries__grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
         }
 
-        .industries-slider__button {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+        .industries-card {
+            padding: 22px;
         }
 
-        .industries-slider__track {
-            grid-auto-columns: minmax(260px, 86%);
-            gap: 18px;
-        }
-
-        .industry-card__media {
-            min-height: 190px;
-        }
-
-        .industry-card__body {
-            padding: 20px;
-        }
-
-        .industry-card h3 {
+        .industries-card__title {
             font-size: 20px;
         }
     }

@@ -3,29 +3,27 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import IntroHero from "../components/home/IntroHero.astro";
+import MainHero from "../components/home/MainHero.astro";
 import ProductsSection from "../components/home/ProductsSection.astro";
-import AboutCompanySection from "../components/home/AboutCompanySection.astro";
-import ContactSection from "../components/home/ContactSection.astro";
-import BenefitsSection from "../components/home/BenefitsSection.astro";
 import IndustriesSection from "../components/home/IndustriesSection.astro";
-import VacanciesSection from "../components/home/VacanciesSection.astro";
-import FinalCtaSection from "../components/home/FinalCtaSection.astro";
+import BenefitsSection from "../components/home/BenefitsSection.astro";
+import StepsSection from "../components/home/StepsSection.astro";
+import TrustSection from "../components/home/TrustSection.astro";
+import ContactSection from "../components/home/ContactSection.astro";
 ---
 
-<BaseLayout
-    title="ООО Альянс — оптовые поставки соли"
-    description="Оптовые поставки пищевой, технической и таблетированной соли, противогололедных реагентов. Работаем с бизнесом и предприятиями, доставка по регионам."
->
+<BaseLayout title="ООО Альянс — оптовые поставки соли">
+  <Header />
+
   <main>
     <IntroHero />
-    <Header />
+    <MainHero />
     <ProductsSection />
-    <AboutCompanySection />
-    <ContactSection />
-    <BenefitsSection />
     <IndustriesSection />
-    <VacanciesSection />
-    <FinalCtaSection />
+    <BenefitsSection />
+    <StepsSection />
+    <TrustSection />
+    <ContactSection />
   </main>
 
   <Footer />
