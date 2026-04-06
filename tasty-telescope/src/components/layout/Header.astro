@@ -80,17 +80,21 @@ const navItems = [
     const menu = document.querySelector("[data-menu]");
     const hero = document.querySelector("#hero");
 
-    if (header && hero) {
-        const updateHeaderState = () => {
-            const heroBottom = hero.getBoundingClientRect().bottom;
-            const shouldStick = heroBottom <= 0;
+    if (header) {
+        if (hero) {
+            const updateHeaderState = () => {
+                const heroBottom = hero.getBoundingClientRect().bottom;
+                const shouldStick = heroBottom <= 0;
 
-            header.classList.toggle("is-sticky", shouldStick);
-        };
+                header.classList.toggle("is-sticky", shouldStick);
+            };
 
-        updateHeaderState();
-        window.addEventListener("scroll", updateHeaderState, { passive: true });
-        window.addEventListener("resize", updateHeaderState);
+            updateHeaderState();
+            window.addEventListener("scroll", updateHeaderState, { passive: true });
+            window.addEventListener("resize", updateHeaderState);
+        } else {
+            header.classList.add("is-sticky");
+        }
     }
 
     if (toggleButton && menu) {
