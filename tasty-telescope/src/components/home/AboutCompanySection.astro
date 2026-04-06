@@ -1,162 +1,91 @@
 ---
 const stats = [
     {
-        value: "с 2006 года",
-        label: "работаем на рынке поставок соли",
+        value: "с 2006",
+        label: "на рынке поставок",
     },
     {
-        value: "20 регионов",
-        label: "обеспечиваем поставки по России",
+        value: "20+ регионов",
+        label: "логистика по России",
     },
     {
-        value: "Стабильные поставки",
-        label: "работа без срывов и задержек",
-    },
-    {
-        value: "B2B-фокус",
-        label: "работаем с предприятиями и бизнесом",
+        value: "Стабильно",
+        label: "без срывов поставок",
     },
 ];
 
-const segments = [
-    {
-        title: "Производственные предприятия",
-        text: "Поставки пищевой, выварочной, морской, технической и таблетированной соли для стабильной работы производства.",
-    },
-    {
-        title: "Розничная торговля",
-        text: "Ассортимент фасованной продукции для торговых компаний и сетей с разными форматами упаковки.",
-    },
-    {
-        title: "Водоподготовка и инженерные системы",
-        text: "Таблетированная соль и решения для объектов, где важны качество, регулярность поставок и удобная логистика.",
-    },
-    {
-        title: "Промышленность и сезонные задачи",
-        text: "Техническая соль и противогололёдные материалы для предприятий, складов и сервисных организаций.",
-    },
-];
-
-const advantages = [
-    "Широкий ассортимент продукции под разные отрасли и форматы применения.",
-    "Сотрудничество с надёжными поставщиками и ориентация на стабильное качество.",
-    "Логистические решения под задачу клиента: складские мощности, транспорт и отгрузка в регионы.",
-    "Гибкие условия работы для регулярных закупок, крупных партий и долгосрочного сотрудничества.",
+const points = [
+    "Пищевая, техническая и таблетированная соль",
+    "Поставка под объём и логистику клиента",
+    "Стабильные отгрузки для бизнеса",
 ];
 ---
 
 <section class="about-company" id="about">
     <div class="container about-company__container">
-        <div class="about-company__top">
-            <div class="about-company__eyebrow">О компании</div>
+        <div class="about-company__content">
+            <span class="about-company__eyebrow">О компании</span>
+
             <h2 class="about-company__title">
-                ООО «Альянс» — поставщик соли и решений для стабильного снабжения бизнеса
+                Стабильные поставки соли для предприятий и бизнеса
             </h2>
-            <p class="about-company__subtitle">
-                Мы работаем с предприятиями, торговыми компаниями и промышленными
-                заказчиками, помогая закрывать задачи поставок без срывов, с понятными
-                условиями и удобной логистикой.
+
+            <p class="about-company__text">
+                ООО «Альянс» обеспечивает предприятия, торговые и промышленные компании
+                солью для производственных, технических и коммерческих задач — с
+                понятными условиями, удобной логистикой и надёжными отгрузками.
             </p>
-        </div>
 
-        <div class="about-company__layout">
-            <div class="about-company__main">
-                <div class="about-company__card about-company__intro">
-                    <p class="about-company__lead">
-                        ООО «Альянс» — действующая компания из Пскова, которая с 2006 года
-                        занимается поставками соли для розничной торговли, пищевых и
-                        химических производств, а также для технического и промышленного
-                        применения.
-                    </p>
+            <ul class="about-company__points">
+                {points.map((item) => (
+                        <li>{item}</li>
+                ))}
+            </ul>
 
-                    <div class="about-company__text">
-                        <p>
-                            Компания выстраивает поставки как рабочий бизнес-процесс: помогает
-                            подобрать нужный вид продукции, формат фасовки, объём и схему
-                            отгрузки под конкретную задачу клиента.
-                        </p>
-
-                        <p>
-                            В фокусе — не просто продажа товара, а надёжное снабжение:
-                            стабильное наличие, понятная коммуникация, логистика в регионы и
-                            условия сотрудничества, которые удобно масштабировать под объёмы
-                            заказчика.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="about-company__card about-company__directions">
-                    <div class="about-company__section-head">
-                        <span>Кому и что поставляем</span>
-                        <h3>Основные направления работы</h3>
-                    </div>
-
-                    <div class="about-company__segments">
-                        {segments.map((segment) => (
-                                <article class="about-company__segment">
-                                    <h4>{segment.title}</h4>
-                                    <p>{segment.text}</p>
-                                </article>
-                        ))}
-                    </div>
-                </div>
-
-                <div class="about-company__card about-company__advantages-block">
-                    <div class="about-company__section-head">
-                        <span>Почему выбирают нас</span>
-                        <h3>Преимущества сотрудничества</h3>
-                    </div>
-
-                    <ul class="about-company__advantages">
-                        {advantages.map((item) => (
-                                <li>{item}</li>
-                        ))}
-                    </ul>
-                </div>
+            <div class="about-company__actions">
+                <a href="/about" class="btn btn--primary">Подробнее о компании</a>
+                <a href="#contacts" class="btn btn--secondary">Обсудить поставку</a>
             </div>
-
-            <aside class="about-company__aside">
-                <div class="about-company__stats">
-                    {stats.map((stat) => (
-                            <article class="about-company__stat">
-                                <strong>{stat.value}</strong>
-                                <span>{stat.label}</span>
-                            </article>
-                    ))}
-                </div>
-
-                <div class="about-company__note">
-                    <span class="about-company__note-badge">Формат работы</span>
-                    <h3>От запроса до отгрузки — без лишней сложности</h3>
-                    <p>
-                        Работаем по всей России, подбираем решение под отрасль, объём и
-                        логистику клиента. Это удобно для регулярных поставок и для
-                        компаний, которым важен предсказуемый результат.
-                    </p>
-                    <a href="#contacts" class="about-company__button">Обсудить поставку</a>
-                </div>
-            </aside>
         </div>
+
+        <aside class="about-company__aside">
+            <div class="about-company__stats">
+                {stats.map((item) => (
+                        <article class="about-company__stat">
+                            <strong>{item.value}</strong>
+                            <span>{item.label}</span>
+                        </article>
+                ))}
+            </div>
+        </aside>
     </div>
 </section>
 
 <style>
     .about-company {
         position: relative;
-        padding: 112px 0;
+        padding: 80px 0;
         background:
-                radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 32%),
+                radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 30%),
                 linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     }
 
     .about-company__container {
         width: min(1200px, calc(100% - 32px));
         margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+        gap: 28px;
+        align-items: stretch;
     }
 
-    .about-company__top {
-        max-width: 860px;
-        margin-bottom: 40px;
+    .about-company__content {
+        padding: 36px;
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 28px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+        backdrop-filter: blur(8px);
     }
 
     .about-company__eyebrow {
@@ -168,171 +97,82 @@ const advantages = [
         color: #2563eb;
         font-size: 13px;
         font-weight: 700;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
         text-transform: uppercase;
         margin-bottom: 18px;
     }
 
     .about-company__title {
-        margin: 0 0 16px;
-        font-size: clamp(32px, 4vw, 52px);
-        line-height: 1.08;
-        letter-spacing: -0.04em;
-        color: var(--color-text, #0f172a);
-    }
-
-    .about-company__subtitle {
-        margin: 0;
+        margin: 0 0 18px;
         max-width: 760px;
-        font-size: 18px;
-        line-height: 1.75;
-        color: var(--color-text-soft, #475569);
-    }
-
-    .about-company__layout {
-        display: grid;
-        grid-template-columns: minmax(0, 1.35fr) minmax(320px, 0.8fr);
-        gap: 28px;
-        align-items: start;
-    }
-
-    .about-company__main {
-        display: grid;
-        gap: 24px;
-    }
-
-    .about-company__card,
-    .about-company__stat,
-    .about-company__note {
-        border: 1px solid rgba(148, 163, 184, 0.2);
-        border-radius: 24px;
-        background: rgba(255, 255, 255, 0.94);
-        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
-        backdrop-filter: blur(10px);
-    }
-
-    .about-company__intro,
-    .about-company__directions,
-    .about-company__advantages-block {
-        padding: 32px;
-    }
-
-    .about-company__lead {
-        margin: 0 0 22px;
-        font-size: 24px;
-        line-height: 1.55;
-        letter-spacing: -0.02em;
-        font-weight: 700;
-        color: var(--color-text, #0f172a);
+        font-size: clamp(34px, 4vw, 58px);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+        color: #0f172a;
     }
 
     .about-company__text {
-        display: grid;
-        gap: 16px;
-    }
-
-    .about-company__text p {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.8;
-        color: var(--color-text-soft, #475569);
-    }
-
-    .about-company__section-head {
-        margin-bottom: 22px;
-    }
-
-    .about-company__section-head span {
-        display: inline-block;
-        margin-bottom: 10px;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        color: #2563eb;
-    }
-
-    .about-company__section-head h3 {
-        margin: 0;
-        font-size: 28px;
-        line-height: 1.15;
-        letter-spacing: -0.03em;
-        color: var(--color-text, #0f172a);
-    }
-
-    .about-company__segments {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 16px;
-    }
-
-    .about-company__segment {
-        padding: 20px;
-        border-radius: 20px;
-        background: #ffffff;
-        border: 1px solid rgba(148, 163, 184, 0.18);
-    }
-
-    .about-company__segment h4 {
-        margin: 0 0 10px;
+        margin: 0 0 24px;
+        max-width: 760px;
         font-size: 18px;
-        line-height: 1.3;
-        color: var(--color-text, #0f172a);
+        line-height: 1.75;
+        color: #475569;
     }
 
-    .about-company__segment p {
-        margin: 0;
-        font-size: 15px;
-        line-height: 1.7;
-        color: var(--color-text-soft, #475569);
-    }
-
-    .about-company__advantages {
+    .about-company__points {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 14px;
-        list-style: none;
-        margin: 0;
+        margin: 0 0 30px;
         padding: 0;
+        list-style: none;
     }
 
-    .about-company__advantages li {
+    .about-company__points li {
         position: relative;
-        padding: 18px 18px 18px 46px;
-        border-radius: 18px;
-        background: #ffffff;
-        border: 1px solid rgba(148, 163, 184, 0.16);
-        font-size: 15px;
+        padding-left: 30px;
+        font-size: 16px;
         line-height: 1.7;
-        color: var(--color-text-soft, #475569);
+        color: #0f172a;
+        font-weight: 500;
     }
 
-    .about-company__advantages li::before {
+    .about-company__points li::before {
         content: "";
         position: absolute;
-        top: 22px;
-        left: 18px;
-        width: 12px;
-        height: 12px;
+        top: 9px;
+        left: 0;
+        width: 10px;
+        height: 10px;
         border-radius: 999px;
         background: #2563eb;
         box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
     }
 
+    .about-company__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
     .about-company__aside {
-        display: grid;
-        gap: 20px;
+        display: flex;
+        height: 100%;
     }
 
     .about-company__stats {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: 1fr;
         gap: 16px;
+        width: 100%;
     }
 
     .about-company__stat {
-        min-height: 150px;
-        padding: 22px 20px;
+        min-height: 148px;
+        padding: 24px;
+        border-radius: 24px;
+        background: linear-gradient(180deg, #ffffff 0%, #f1f5ff 100%);
+        border: 1px solid rgba(37, 99, 235, 0.12);
+        box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -340,116 +180,112 @@ const advantages = [
 
     .about-company__stat strong {
         display: block;
-        font-size: 28px;
-        line-height: 1.1;
-        letter-spacing: -0.03em;
-        color: var(--color-text, #0f172a);
+        font-size: 30px;
+        line-height: 1.05;
+        letter-spacing: -0.04em;
+        color: #0f172a;
     }
 
     .about-company__stat span {
         display: block;
-        font-size: 14px;
+        font-size: 15px;
         line-height: 1.6;
-        color: var(--color-text-muted, #64748b);
+        color: #64748b;
     }
 
-    .about-company__note {
-        padding: 28px;
-        background: linear-gradient(180deg, #ffffff 0%, #eff6ff 100%);
-    }
-
-    .about-company__note-badge {
-        display: inline-flex;
-        align-items: center;
-        margin-bottom: 14px;
-        padding: 8px 12px;
-        border-radius: 999px;
-        background: rgba(37, 99, 235, 0.08);
-        color: #2563eb;
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .about-company__note h3 {
-        margin: 0 0 14px;
-        font-size: 30px;
-        line-height: 1.15;
-        letter-spacing: -0.03em;
-        color: var(--color-text, #0f172a);
-    }
-
-    .about-company__note p {
-        margin: 0 0 22px;
-        font-size: 16px;
-        line-height: 1.75;
-        color: var(--color-text-soft, #475569);
-    }
-
-    .about-company__button {
+    .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        min-height: 52px;
-        padding: 0 20px;
+        min-height: 54px;
+        padding: 0 24px;
         border-radius: 14px;
-        background: #2563eb;
-        color: #ffffff;
         text-decoration: none;
         font-weight: 700;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+        font-size: 15px;
+        transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
     }
 
-    .about-company__button:hover {
+    .btn:hover {
         transform: translateY(-2px);
+    }
+
+    .btn--primary {
+        background: #2563eb;
+        color: #ffffff;
+        box-shadow: 0 14px 30px rgba(37, 99, 235, 0.22);
+    }
+
+    .btn--primary:hover {
         background: #1d4ed8;
     }
 
-    @media (max-width: 1100px) {
-        .about-company {
-            padding: 96px 0;
+    .btn--secondary {
+        background: #ffffff;
+        color: #0f172a;
+        border: 1px solid rgba(148, 163, 184, 0.24);
+    }
+
+    .btn--secondary:hover {
+        border-color: rgba(37, 99, 235, 0.24);
+        color: #2563eb;
+    }
+
+    @media (max-width: 1024px) {
+        .about-company__container {
+            grid-template-columns: 1fr;
         }
 
-        .about-company__layout {
-            grid-template-columns: 1fr;
+        .about-company__stats {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
         }
     }
 
     @media (max-width: 767px) {
         .about-company {
-            padding: 80px 0;
+            padding: 72px 0;
         }
 
-        .about-company__top {
-            margin-bottom: 28px;
+        .about-company__content {
+            padding: 24px;
+            border-radius: 22px;
         }
 
-        .about-company__subtitle {
+        .about-company__title {
+            font-size: 34px;
+            line-height: 1.04;
+        }
+
+        .about-company__text {
             font-size: 16px;
             line-height: 1.7;
         }
 
-        .about-company__intro,
-        .about-company__directions,
-        .about-company__advantages-block,
-        .about-company__note {
-            padding: 24px;
-            border-radius: 20px;
+        .about-company__points li {
+            font-size: 15px;
+            line-height: 1.65;
         }
 
-        .about-company__lead {
-            font-size: 20px;
+        .about-company__actions {
+            flex-direction: column;
         }
 
-        .about-company__segments,
-        .about-company__advantages,
         .about-company__stats {
             grid-template-columns: 1fr;
         }
 
-        .about-company__note h3 {
-            font-size: 24px;
+        .about-company__stat {
+            min-height: 128px;
+            border-radius: 20px;
+        }
+
+        .btn {
+            width: 100%;
         }
     }
 </style>
