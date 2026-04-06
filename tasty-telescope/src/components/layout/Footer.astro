@@ -1,177 +1,186 @@
-<footer class="footer">
-    <div class="container footer__inner">
-        <div class="footer__brand">
-            <a href="#top" class="footer__logo">
-                <span class="footer__logo-mark">A</span>
-                <span class="footer__logo-text">
-          <strong>ООО Альянс</strong>
-          <small>Оптовые поставки соли</small>
-        </span>
-            </a>
+---
+const footerNav = [
+    { label: "Главная", href: "/" },
+    { label: "Продукция", href: "#products" },
+    { label: "Преимущества", href: "#benefits" },
+    { label: "Схема работы", href: "#steps" },
+    { label: "Контакты", href: "#contacts" },
+];
+---
 
-            <p>
-                Пищевая, техническая и таблетированная соль, противогололедные реагенты.
-                Поставки для бизнеса и предприятий.
-            </p>
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__grid">
+            <div class="site-footer__brand-column">
+                <a class="site-footer__brand" href="/" aria-label="ООО Альянс — на главную">
+                    <span class="site-footer__brand-mark">A</span>
+
+                    <span class="site-footer__brand-text">
+            <span class="site-footer__brand-title">ООО Альянс</span>
+            <span class="site-footer__brand-subtitle">Оптовые поставки соли</span>
+          </span>
+                </a>
+
+                <p class="site-footer__description">
+                    Пищевая, техническая и таблетированная соль, противогололедные
+                    реагенты. Поставки для бизнеса и предприятий.
+                </p>
+            </div>
+
+            <div class="site-footer__column">
+                <h3 class="site-footer__title">Навигация</h3>
+
+                <ul class="site-footer__nav">
+                    {footerNav.map((item) => (
+                            <li>
+                                <a href={item.href}>{item.label}</a>
+                            </li>
+                    ))}
+                </ul>
+            </div>
+
+            <div class="site-footer__column">
+                <h3 class="site-footer__title">Контакты</h3>
+
+                <div class="site-footer__contacts">
+                    <a href="tel:+78112702529">8 (8112) 70-25-29</a>
+                    <a href="tel:+79215080190">8 (921) 508-01-90</a>
+                    <a href="mailto:pskov@e-salt.ru">pskov@e-salt.ru</a>
+                    <span>Пн–Пт: 08:00–17:00</span>
+                </div>
+            </div>
         </div>
 
-        <div class="footer__nav">
-            <h3>Навигация</h3>
-            <a href="#about">О компании</a>
-            <a href="#products">Продукция</a>
-            <a href="#delivery">Доставка</a>
-            <a href="#payment">Оплата</a>
-            <a href="#contact">Контакты</a>
+        <div class="site-footer__bottom">
+            <span>© 2026 ООО Альянс. Все права защищены.</span>
+            <a href="#contacts">Политика конфиденциальности</a>
         </div>
-
-        <div class="footer__contacts">
-            <h3>Контакты</h3>
-            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
-            <a href="mailto:info@alliance.ru">info@alliance.ru</a>
-            <p>г. Ваш город, ул. Примерная, д. 1</p>
-            <p>Пн–Пт: 09:00–18:00</p>
-        </div>
-    </div>
-
-    <div class="container footer__bottom">
-        <p>© 2026 ООО Альянс. Все права защищены.</p>
-        <a href="#">Политика конфиденциальности</a>
     </div>
 </footer>
 
 <style>
-    .footer {
-        padding: 40px 0 24px;
+    .site-footer {
+        padding: 72px 0 28px;
         background: #0f172a;
-        color: #ffffff;
+        color: rgba(255, 255, 255, 0.78);
     }
 
-    .footer__inner {
+    .site-footer__grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) 0.8fr 0.9fr;
+        grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.7fr) minmax(260px, 0.8fr);
         gap: 32px;
-        padding-bottom: 28px;
+        padding-bottom: 32px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .footer__brand p,
-    .footer__contacts p,
-    .footer__bottom p,
-    .footer__bottom a,
-    .footer__nav a,
-    .footer__contacts a {
-        color: rgba(255, 255, 255, 0.76);
-    }
-
-    .footer__logo {
+    .site-footer__brand {
         display: inline-flex;
         align-items: center;
         gap: 14px;
-        margin-bottom: 18px;
     }
 
-    .footer__logo-mark {
+    .site-footer__brand-mark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
         width: 44px;
         height: 44px;
         border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: var(--color-primary);
+        background: linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
         color: #ffffff;
+        font-size: 22px;
         font-weight: 800;
-        font-size: 20px;
-        box-shadow: 0 10px 24px rgba(29, 78, 216, 0.25);
     }
 
-    .footer__logo-text {
+    .site-footer__brand-text {
         display: flex;
         flex-direction: column;
-        line-height: 1.15;
     }
 
-    .footer__logo-text strong {
-        font-size: 16px;
-        color: #ffffff;
-    }
-
-    .footer__logo-text small {
-        font-size: 13px;
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer__brand p {
-        margin: 0;
-        max-width: 420px;
-        line-height: 1.7;
-    }
-
-    .footer__nav,
-    .footer__contacts {
-        display: grid;
-        align-content: start;
-        gap: 10px;
-    }
-
-    .footer__nav h3,
-    .footer__contacts h3 {
-        margin: 0 0 8px;
+    .site-footer__brand-title {
         font-size: 18px;
+        line-height: 1.1;
+        font-weight: 800;
         color: #ffffff;
     }
 
-    .footer__nav a,
-    .footer__contacts a {
+    .site-footer__brand-subtitle {
+        margin-top: 4px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.58);
+    }
+
+    .site-footer__description {
+        max-width: 460px;
+        margin: 18px 0 0;
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    .site-footer__title {
+        margin: 0 0 16px;
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    .site-footer__nav {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .site-footer__contacts {
+        display: grid;
+        gap: 12px;
+    }
+
+    .site-footer a,
+    .site-footer span {
+        color: rgba(255, 255, 255, 0.78);
         transition: color var(--transition);
     }
 
-    .footer__nav a:hover,
-    .footer__contacts a:hover,
-    .footer__bottom a:hover {
+    .site-footer a:hover {
         color: #ffffff;
     }
 
-    .footer__contacts p {
-        margin: 0;
-        line-height: 1.6;
-    }
-
-    .footer__bottom {
+    .site-footer__bottom {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        gap: 16px;
-        padding-top: 18px;
+        gap: 18px;
+        padding-top: 22px;
         font-size: 14px;
+        color: rgba(255, 255, 255, 0.58);
     }
 
-    .footer__bottom p {
-        margin: 0;
-    }
-
-    @media (max-width: 1100px) {
-        .footer__inner {
+    @media (max-width: 960px) {
+        .site-footer__grid {
             grid-template-columns: 1fr 1fr;
         }
 
-        .footer__brand {
+        .site-footer__brand-column {
             grid-column: 1 / -1;
         }
     }
 
-    @media (max-width: 767px) {
-        .footer {
-            padding: 32px 0 20px;
+    @media (max-width: 640px) {
+        .site-footer {
+            padding: 56px 0 24px;
         }
 
-        .footer__inner {
+        .site-footer__grid {
             grid-template-columns: 1fr;
             gap: 24px;
-            padding-bottom: 22px;
         }
 
-        .footer__bottom {
+        .site-footer__bottom {
             flex-direction: column;
             align-items: flex-start;
-            padding-top: 16px;
         }
     }
 </style>

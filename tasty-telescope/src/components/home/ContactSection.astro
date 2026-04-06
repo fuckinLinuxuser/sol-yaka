@@ -1,243 +1,244 @@
-<section class="section section--soft contacts-section" id="contacts">
+---
+
+---
+
+<section class="contact-section section" id="contacts">
     <div class="container">
-        <div class="section-head contacts-section__head">
-            <span class="section-kicker">Контакты</span>
-            <h2>Связаться по поставке можно напрямую</h2>
-            <p>
-                Блок без лишней перегрузки: телефон, email, адрес и рабочий график в
-                одном месте. Для B2B-сайта это удобнее, чем прятать контакты глубоко в
-                футере — пользователь сразу видит, куда писать и звонить.
-            </p>
-        </div>
+        <div class="contact-section__grid">
+            <div class="contact-section__content">
+                <span class="section-heading__eyebrow">Контакты и заявка</span>
+                <h2 class="contact-section__title">
+                    Оставьте заявку — подготовим предложение под ваш объём и задачу
+                </h2>
+                <p class="contact-section__text">
+                    Подберём продукцию, рассчитаем стоимость, уточним сроки поставки и
+                    предложим удобный формат отгрузки для вашего бизнеса.
+                </p>
 
-        <div class="contacts-section__grid">
-            <div class="contacts-section__cards">
-                <article class="contacts-card card">
-                    <span class="contacts-card__label">Телефоны</span>
-                    <div class="contacts-card__value contacts-card__value--stack">
-                        <a href="tel:+78112702529">8 (8112) 70-25-29</a>
-                        <a href="tel:+79215080190">8 (921) 508-01-90</a>
+                <div class="contact-section__info">
+                    <div class="contact-section__info-item">
+                        <span class="contact-section__info-label">Телефон</span>
+                        <div class="contact-section__links">
+                            <a href="tel:+78112702529">8 (8112) 70-25-29</a>
+                            <a href="tel:+79215080190">8 (921) 508-01-90</a>
+                        </div>
                     </div>
-                    <p>Для расчёта поставки, согласования объёма и уточнения условий.</p>
-                </article>
 
-                <article class="contacts-card card">
-                    <span class="contacts-card__label">E-mail</span>
-                    <div class="contacts-card__value">
+                    <div class="contact-section__info-item">
+                        <span class="contact-section__info-label">E-mail</span>
                         <a href="mailto:pskov@e-salt.ru">pskov@e-salt.ru</a>
                     </div>
-                    <p>Удобно для запроса прайса, реквизитов и деловой переписки.</p>
-                </article>
 
-                <article class="contacts-card card">
-                    <span class="contacts-card__label">Адрес</span>
-                    <div class="contacts-card__value">
-                        г. Псков, ул. Фрунзе, д. 32 А
+                    <div class="contact-section__info-item">
+                        <span class="contact-section__info-label">Режим работы</span>
+                        <span>Пн–Пт: 08:00–17:00</span>
                     </div>
-                    <p>Фактический контактный адрес компании.</p>
-                </article>
-
-                <article class="contacts-card card">
-                    <span class="contacts-card__label">Режим работы</span>
-                    <div class="contacts-card__value">
-                        Пн-Пт: 08:00 – 17:00
-                    </div>
-                    <p>В рабочее время проще всего быстро согласовать поставку и отгрузку.</p>
-                </article>
+                </div>
             </div>
 
-            <aside class="contacts-panel card">
-                <h3>Как удобнее начать диалог</h3>
+            <div class="contact-section__form-wrap">
+                <form class="contact-form">
+                    <div class="contact-form__grid">
+                        <label class="contact-form__field">
+                            <span class="contact-form__label">Имя</span>
+                            <input type="text" name="name" placeholder="Ваше имя" />
+                        </label>
 
-                <ol class="contacts-panel__steps">
-                    <li>
-                        <strong>Опишите задачу</strong>
-                        <span>
-              Нужен тип продукции, примерный объём, регион поставки и желаемые
-              сроки.
-            </span>
-                    </li>
+                        <label class="contact-form__field">
+                            <span class="contact-form__label">Телефон</span>
+                            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" />
+                        </label>
 
-                    <li>
-                        <strong>Уточним условия</strong>
-                        <span>
-              Согласуем формат отгрузки, удобный канал связи и базовые условия
-              сотрудничества.
-            </span>
-                    </li>
+                        <label class="contact-form__field">
+                            <span class="contact-form__label">Компания</span>
+                            <input type="text" name="company" placeholder="Название компании" />
+                        </label>
 
-                    <li>
-                        <strong>Подготовим предложение</strong>
-                        <span>
-              После уточнения параметров можно быстро перейти к коммерческому
-              предложению или рабочему диалогу по закупке.
-            </span>
-                    </li>
-                </ol>
+                        <label class="contact-form__field contact-form__field--full">
+                            <span class="contact-form__label">Комментарий</span>
+                            <textarea
+                                    name="comment"
+                                    rows="5"
+                                    placeholder="Какая продукция нужна, объём, город доставки, сроки"
+                            ></textarea>
+                        </label>
+                    </div>
 
-                <div class="contacts-panel__actions">
-                    <a class="btn btn--primary" href="tel:+78112702529">
-                        Позвонить сейчас
-                    </a>
+                    <button class="btn btn--primary contact-form__submit" type="submit">
+                        Отправить заявку
+                    </button>
 
-                    <a
-                            class="btn btn--secondary"
-                            href="mailto:pskov@e-salt.ru?subject=Запрос по поставке соли"
-                    >
-                        Написать на почту
-                    </a>
-                </div>
-            </aside>
+                    <p class="contact-form__policy">
+                        Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+                    </p>
+                </form>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
-    .contacts-section {
-        scroll-margin-top: 104px;
+    .contact-section {
+        background:
+                linear-gradient(180deg, rgba(248, 250, 252, 0.84) 0%, rgba(255, 255, 255, 1) 100%);
     }
 
-    .contacts-section__head {
-        margin-bottom: 34px;
-    }
-
-    .contacts-section__grid {
+    .contact-section__grid {
         display: grid;
-        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
-        gap: 28px;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 32px;
         align-items: start;
     }
 
-    .contacts-section__cards {
+    .contact-section__content {
+        padding: 32px;
+        border-radius: var(--radius-xl);
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        color: #ffffff;
+        box-shadow: var(--shadow-md);
+    }
+
+    .contact-section__content .section-heading__eyebrow {
+        color: rgba(255, 255, 255, 0.72);
+    }
+
+    .contact-section__title {
+        margin: 14px 0 16px;
+        font-size: clamp(30px, 4vw, 44px);
+        line-height: 1.08;
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        color: #ffffff;
+    }
+
+    .contact-section__text {
+        margin: 0;
+        max-width: 560px;
+        color: rgba(255, 255, 255, 0.82);
+    }
+
+    .contact-section__info {
+        display: grid;
+        gap: 20px;
+        margin-top: 32px;
+    }
+
+    .contact-section__info-item {
+        display: grid;
+        gap: 8px;
+    }
+
+    .contact-section__info-label {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    .contact-section__info-item a,
+    .contact-section__info-item span {
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .contact-section__links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .contact-section__form-wrap {
+        padding: 32px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-xl);
+        background: #ffffff;
+        box-shadow: var(--shadow-md);
+    }
+
+    .contact-form__grid {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
     }
 
-    .contacts-card {
-        padding: 24px;
-    }
-
-    .contacts-card__label {
-        display: inline-flex;
-        align-items: center;
-        min-height: 34px;
-        margin-bottom: 14px;
-        padding: 0 12px;
-        border-radius: 999px;
-        background: rgba(29, 78, 216, 0.08);
-        color: #1d4ed8;
-        font-size: 13px;
-        font-weight: 700;
-    }
-
-    .contacts-card__value {
-        font-size: 22px;
-        line-height: 1.25;
-        font-weight: 800;
-        color: #0f172a;
-        letter-spacing: -0.02em;
-    }
-
-    .contacts-card__value--stack {
+    .contact-form__field {
         display: grid;
         gap: 8px;
     }
 
-    .contacts-card p {
+    .contact-form__field--full {
+        grid-column: 1 / -1;
+    }
+
+    .contact-form__label {
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-text);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 16px 18px;
+        border: 1px solid var(--color-border);
+        border-radius: 16px;
+        background: #ffffff;
+        color: var(--color-text);
+        font: inherit;
+        transition:
+                border-color var(--transition),
+                box-shadow var(--transition);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: rgba(37, 99, 235, 0.4);
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+    }
+
+    .contact-form textarea {
+        resize: vertical;
+        min-height: 140px;
+    }
+
+    .contact-form__submit {
+        width: 100%;
+        margin-top: 18px;
+    }
+
+    .contact-form__policy {
         margin: 14px 0 0;
-        color: #475569;
-        line-height: 1.7;
+        font-size: 14px;
+        line-height: 1.5;
+        color: var(--color-text-muted);
     }
 
-    .contacts-panel {
-        padding: 28px;
-    }
-
-    .contacts-panel h3 {
-        margin: 0 0 18px;
-        font-size: 28px;
-        line-height: 1.15;
-        letter-spacing: -0.03em;
-        color: #0f172a;
-    }
-
-    .contacts-panel__steps {
-        display: grid;
-        gap: 16px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        counter-reset: contact-steps;
-    }
-
-    .contacts-panel__steps li {
-        position: relative;
-        display: grid;
-        gap: 6px;
-        padding: 0 0 0 54px;
-        counter-increment: contact-steps;
-    }
-
-    .contacts-panel__steps li::before {
-        content: counter(contact-steps);
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 38px;
-        height: 38px;
-        border-radius: 12px;
-        background: #0f172a;
-        color: #ffffff;
-        font-weight: 800;
-    }
-
-    .contacts-panel__steps strong {
-        font-size: 18px;
-        color: #0f172a;
-    }
-
-    .contacts-panel__steps span {
-        color: #475569;
-        line-height: 1.7;
-    }
-
-    .contacts-panel__actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        margin-top: 24px;
-    }
-
-    @media (max-width: 1100px) {
-        .contacts-section__grid {
+    @media (max-width: 960px) {
+        .contact-section__grid {
             grid-template-columns: 1fr;
         }
     }
 
-    @media (max-width: 767px) {
-        .contacts-section__cards {
+    @media (max-width: 640px) {
+        .contact-section__content,
+        .contact-section__form-wrap {
+            padding: 22px;
+        }
+
+        .contact-form__grid {
             grid-template-columns: 1fr;
         }
 
-        .contacts-card,
-        .contacts-panel {
-            padding: 20px;
+        .contact-form__field--full {
+            grid-column: auto;
         }
 
-        .contacts-card__value {
-            font-size: 20px;
-        }
-
-        .contacts-panel h3 {
-            font-size: 24px;
-        }
-
-        .contacts-panel__actions {
-            flex-direction: column;
+        .contact-section__info-item a,
+        .contact-section__info-item span {
+            font-size: 16px;
         }
     }
 </style>

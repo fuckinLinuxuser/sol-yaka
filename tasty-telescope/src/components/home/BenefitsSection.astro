@@ -1,50 +1,30 @@
 ---
 const benefits = [
-    {
-        title: "Широкий ассортимент",
-        text: "Пищевая, техническая и таблетированная соль, а также противогололедные реагенты под разные сценарии закупки.",
-    },
-    {
-        title: "Поставка под задачи клиента",
-        text: "Можно обсуждать не только позицию, но и формат фасовки, объём, график и географию отгрузки.",
-    },
-    {
-        title: "Удобно для B2B-закупки",
-        text: "Работа с юридическими лицами, понятная деловая коммуникация и фокус на коммерческом процессе, а не на розничной подаче.",
-    },
-    {
-        title: "Логистическая гибкость",
-        text: "Подход подходит для клиентов, которым важно быстро согласовать доставку под склад, объект, производство или сеть точек.",
-    },
-    {
-        title: "Документы и сопровождение",
-        text: "Поставки строятся так, чтобы клиенту было проще работать с документами, условиями и последующей коммуникацией.",
-    },
-    {
-        title: "Надёжность в регулярной работе",
-        text: "Для предприятий особенно важны предсказуемость, наличие и удобный рабочий сценарий на постоянной основе.",
-    },
+    "Надёжные поставки без срывов сроков",
+    "Оптовые цены для бизнеса и предприятий",
+    "Доставка по регионам",
+    "Работа с юридическими лицами",
+    "Полный комплект документов и сертификатов",
+    "Персональный менеджер на каждом этапе",
 ];
 ---
 
-<section class="section benefits-section">
+<section class="benefits section" id="benefits">
     <div class="container">
-        <div class="section-head benefits-section__head">
-            <span class="section-kicker">Преимущества</span>
-            <h2>Почему этот сайт должен продавать лучше старого</h2>
-            <p>
-                Вместо перегруженных списков здесь сделан понятный B2B-блок: короткие
-                формулировки, ясные выгоды и структура, в которой закупщик или менеджер
-                быстро понимает, чем компания удобна в работе.
+        <div class="section-heading">
+            <span class="section-heading__eyebrow">Преимущества</span>
+            <h2 class="section-heading__title">Почему с нами удобно работать</h2>
+            <p class="section-heading__text">
+                Строим поставки так, чтобы клиент быстро понимал условия, сроки, объёмы и
+                комплект документов без лишних согласований.
             </p>
         </div>
 
-        <div class="benefits-grid">
-            {benefits.map((item, index) => (
-                    <article class="benefits-card card">
-                        <span class="benefits-card__index">0{index + 1}</span>
-                        <h3>{item.title}</h3>
-                        <p>{item.text}</p>
+        <div class="benefits__grid">
+            {benefits.map((benefit) => (
+                    <article class="benefits__item">
+                        <span class="benefits__icon" aria-hidden="true">✓</span>
+                        <p class="benefits__text">{benefit}</p>
                     </article>
             ))}
         </div>
@@ -52,71 +32,62 @@ const benefits = [
 </section>
 
 <style>
-    .benefits-section {
-        scroll-margin-top: 104px;
+    .benefits {
+        background:
+                linear-gradient(180deg, rgba(248, 250, 252, 0.9) 0%, rgba(255, 255, 255, 1) 100%);
     }
 
-    .benefits-section__head {
-        margin-bottom: 34px;
-    }
-
-    .benefits-grid {
+    .benefits__grid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
+        gap: 20px;
     }
 
-    .benefits-card {
+    .benefits__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
         padding: 24px;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-lg);
+        background: #ffffff;
+        box-shadow: var(--shadow-sm);
     }
 
-    .benefits-card__index {
+    .benefits__icon {
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        min-width: 48px;
+        width: 32px;
         height: 32px;
-        margin-bottom: 18px;
-        padding: 0 12px;
+        flex-shrink: 0;
         border-radius: 999px;
-        background: #0f172a;
-        color: #ffffff;
-        font-size: 13px;
+        background: rgba(37, 99, 235, 0.12);
+        color: var(--color-primary);
+        font-size: 18px;
         font-weight: 800;
-        letter-spacing: 0.08em;
     }
 
-    .benefits-card h3 {
-        margin: 0 0 12px;
-        font-size: 22px;
-        line-height: 1.2;
-        letter-spacing: -0.02em;
-        color: #0f172a;
-    }
-
-    .benefits-card p {
+    .benefits__text {
         margin: 0;
-        color: #475569;
-        line-height: 1.72;
+        font-size: 16px;
+        color: var(--color-text);
     }
 
-    @media (max-width: 1100px) {
-        .benefits-grid {
+    @media (max-width: 960px) {
+        .benefits__grid {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    @media (max-width: 767px) {
-        .benefits-grid {
+    @media (max-width: 640px) {
+        .benefits__grid {
             grid-template-columns: 1fr;
+            gap: 14px;
         }
 
-        .benefits-card {
+        .benefits__item {
             padding: 20px;
-        }
-
-        .benefits-card h3 {
-            font-size: 20px;
         }
     }
 </style>

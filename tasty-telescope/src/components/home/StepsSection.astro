@@ -19,23 +19,23 @@ const steps = [
 ];
 ---
 
-<section class="section steps-section" id="delivery">
+<section class="steps section" id="steps">
     <div class="container">
-        <div class="section-head">
-            <span class="section-kicker">Как мы работаем</span>
-            <h2>Понятный процесс от заявки до поставки</h2>
-            <p>
+        <div class="section-heading">
+            <span class="section-heading__eyebrow">Как мы работаем</span>
+            <h2 class="section-heading__title">Понятный процесс от заявки до поставки</h2>
+            <p class="section-heading__text">
                 Делаем процесс закупки простым: быстро уточняем задачу, подбираем
                 продукцию, согласовываем условия и организуем поставку.
             </p>
         </div>
 
-        <div class="steps-grid">
+        <div class="steps__grid">
             {steps.map((step, index) => (
-                    <article class="card step-card">
-                        <div class="step-card__num">{index + 1}</div>
-                        <h3>{step.title}</h3>
-                        <p>{step.text}</p>
+                    <article class="steps__card">
+                        <span class="steps__number">{index + 1}</span>
+                        <h3 class="steps__title">{step.title}</h3>
+                        <p class="steps__text">{step.text}</p>
                     </article>
             ))}
         </div>
@@ -43,66 +43,67 @@ const steps = [
 </section>
 
 <style>
-    .steps-section {
-        background: #ffffff;
-    }
-
-    .steps-grid {
+    .steps__grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
     }
 
-    .step-card {
-        height: 100%;
+    .steps__card {
+        position: relative;
         padding: 28px;
+        border-radius: var(--radius-lg);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
     }
 
-    .step-card__num {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 18px;
-        border-radius: 14px;
-        display: grid;
-        place-items: center;
-        background: var(--color-primary);
+    .steps__number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        margin-bottom: 20px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, var(--color-primary) 0%, #3b82f6 100%);
         color: #ffffff;
+        font-size: 20px;
         font-weight: 800;
-        font-size: 18px;
-        box-shadow: 0 12px 24px rgba(29, 78, 216, 0.18);
+        box-shadow: 0 14px 32px rgba(37, 99, 235, 0.22);
     }
 
-    .step-card h3 {
+    .steps__title {
         margin: 0 0 12px;
-        font-size: 24px;
+        font-size: 21px;
         line-height: 1.2;
+        font-weight: 800;
         color: var(--color-text);
     }
 
-    .step-card p {
+    .steps__text {
         margin: 0;
         color: var(--color-text-soft);
-        line-height: 1.7;
     }
 
     @media (max-width: 1100px) {
-        .steps-grid {
-            grid-template-columns: repeat(2, 1fr);
+        .steps__grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
         }
     }
 
-    @media (max-width: 767px) {
-        .steps-grid {
+    @media (max-width: 640px) {
+        .steps__grid {
             grid-template-columns: 1fr;
             gap: 16px;
         }
 
-        .step-card {
+        .steps__card {
             padding: 22px;
         }
 
-        .step-card h3 {
-            font-size: 22px;
+        .steps__title {
+            font-size: 19px;
         }
     }
 </style>
