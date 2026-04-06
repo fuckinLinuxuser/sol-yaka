@@ -1,0 +1,217 @@
+<section class="section contact-section" id="contact">
+    <div class="container contact-section__inner">
+        <div class="contact-section__content">
+            <div class="section-head contact-section__head">
+                <span class="section-kicker">Контакты и заявка</span>
+                <h2>Оставьте заявку — подготовим предложение под ваш объём и задачу</h2>
+                <p>
+                    Подберём продукцию, рассчитаем стоимость, уточним сроки поставки и
+                    предложим удобный формат отгрузки для вашего бизнеса.
+                </p>
+            </div>
+
+            <div class="contact-section__info">
+                <div class="contact-item">
+                    <span class="contact-item__label">Телефон</span>
+                    <a href="tel:+70000000000" class="contact-item__value">+7 (000) 000-00-00</a>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-item__label">E-mail</span>
+                    <a href="mailto:info@alliance.ru" class="contact-item__value">info@alliance.ru</a>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-item__label">Адрес</span>
+                    <p class="contact-item__text">г. Ваш город, ул. Примерная, д. 1</p>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-item__label">Режим работы</span>
+                    <p class="contact-item__text">Пн–Пт: 09:00–18:00</p>
+                </div>
+            </div>
+        </div>
+
+        <form class="contact-form">
+            <div class="contact-form__grid">
+                <label class="field">
+                    <span class="field__label">Имя</span>
+                    <input type="text" name="name" placeholder="Ваше имя" />
+                </label>
+
+                <label class="field">
+                    <span class="field__label">Телефон</span>
+                    <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" />
+                </label>
+
+                <label class="field">
+                    <span class="field__label">Компания</span>
+                    <input type="text" name="company" placeholder="Название компании" />
+                </label>
+
+                <label class="field field--full">
+                    <span class="field__label">Комментарий</span>
+                    <textarea
+                            name="comment"
+                            rows="5"
+                            placeholder="Какая продукция и какой объём вас интересуют?"
+                    ></textarea>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn--primary contact-form__submit">
+                Отправить заявку
+            </button>
+
+            <p class="contact-form__note">
+                Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
+            </p>
+        </form>
+    </div>
+</section>
+
+<style>
+    .contact-section {
+        background: #ffffff;
+    }
+
+    .contact-section__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+        gap: 24px;
+        align-items: start;
+    }
+
+    .contact-section__head {
+        margin-bottom: 28px;
+    }
+
+    .contact-section__info {
+        display: grid;
+        gap: 18px;
+    }
+
+    .contact-item {
+        padding: 22px;
+        border-radius: var(--radius-md);
+        background: var(--color-bg-soft);
+        border: 1px solid var(--color-border);
+    }
+
+    .contact-item__label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 14px;
+        font-weight: 700;
+        color: var(--color-text-muted);
+    }
+
+    .contact-item__value {
+        font-size: 20px;
+        font-weight: 800;
+        color: var(--color-text);
+    }
+
+    .contact-item__text {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--color-text-soft);
+    }
+
+    .contact-form {
+        padding: 28px;
+        border-radius: var(--radius-lg);
+        background: #ffffff;
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-md);
+    }
+
+    .contact-form__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .field--full {
+        grid-column: 1 / -1;
+    }
+
+    .field__label {
+        font-size: 14px;
+        font-weight: 700;
+        color: #334155;
+    }
+
+    .field input,
+    .field textarea {
+        width: 100%;
+        border: 1px solid #cbd5e1;
+        border-radius: 14px;
+        padding: 14px 16px;
+        outline: none;
+        background: #ffffff;
+        color: var(--color-text);
+        transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+        color: #94a3b8;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.1);
+    }
+
+    .field textarea {
+        resize: vertical;
+        min-height: 140px;
+    }
+
+    .contact-form__submit {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-form__note {
+        margin: 14px 0 0;
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--color-text-muted);
+    }
+
+    @media (max-width: 1100px) {
+        .contact-section__inner {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .contact-form {
+            padding: 22px;
+        }
+
+        .contact-form__grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .field--full {
+            grid-column: auto;
+        }
+
+        .contact-item__value {
+            font-size: 18px;
+        }
+    }
+</style>

@@ -1,0 +1,129 @@
+---
+const products = [
+    {
+        title: "Пищевая соль",
+        text: "Соль для пищевого производства, фасовки, торговли и предприятий общественного питания.",
+    },
+    {
+        title: "Техническая соль",
+        text: "Продукция для промышленного применения, обслуживания объектов и технологических процессов.",
+    },
+    {
+        title: "Таблетированная соль",
+        text: "Соль для систем водоочистки, фильтрации и промышленного оборудования.",
+    },
+    {
+        title: "Противогололедные реагенты",
+        text: "Материалы для обработки дорог, территорий, складов и промышленных площадок.",
+    },
+];
+---
+
+<section class="section products-section" id="products">
+    <div class="container">
+        <div class="section-head">
+            <span class="section-kicker">Продукция</span>
+            <h2>Ассортимент продукции для бизнеса и предприятий</h2>
+            <p>
+                Подбираем поставки под производственные, торговые, технические и
+                сезонные задачи. Работаем с разными объёмами и форматом отгрузки.
+            </p>
+        </div>
+
+        <div class="products-grid">
+            {products.map((product) => (
+                    <article class="card product-card">
+                        <div class="product-card__icon" aria-hidden="true"></div>
+
+                        <h3>{product.title}</h3>
+
+                        <p>{product.text}</p>
+
+                        <a href="#contact" class="product-card__link">Подробнее</a>
+                    </article>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .products-section {
+        background: #ffffff;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .product-card {
+        height: 100%;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .product-card__icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+        border-radius: 16px;
+        background: linear-gradient(135deg, #dbeafe, #eff6ff);
+        border: 1px solid #bfdbfe;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .product-card h3 {
+        margin: 0 0 12px;
+        font-size: 24px;
+        line-height: 1.2;
+        color: var(--color-text);
+    }
+
+    .product-card p {
+        margin: 0;
+        color: var(--color-text-soft);
+        line-height: 1.7;
+        flex-grow: 1;
+    }
+
+    .product-card__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 18px;
+        font-weight: 700;
+        color: var(--color-primary);
+    }
+
+    .product-card__link::after {
+        content: "→";
+        transition: transform var(--transition);
+    }
+
+    .product-card:hover .product-card__link::after {
+        transform: translateX(3px);
+    }
+
+    @media (max-width: 1100px) {
+        .products-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .products-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+        .product-card {
+            padding: 22px;
+        }
+
+        .product-card h3 {
+            font-size: 22px;
+        }
+    }
+</style>

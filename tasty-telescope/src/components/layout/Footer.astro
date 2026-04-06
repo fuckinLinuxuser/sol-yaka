@@ -1,0 +1,177 @@
+<footer class="footer">
+    <div class="container footer__inner">
+        <div class="footer__brand">
+            <a href="#top" class="footer__logo">
+                <span class="footer__logo-mark">A</span>
+                <span class="footer__logo-text">
+          <strong>ООО Альянс</strong>
+          <small>Оптовые поставки соли</small>
+        </span>
+            </a>
+
+            <p>
+                Пищевая, техническая и таблетированная соль, противогололедные реагенты.
+                Поставки для бизнеса и предприятий.
+            </p>
+        </div>
+
+        <div class="footer__nav">
+            <h3>Навигация</h3>
+            <a href="#about">О компании</a>
+            <a href="#products">Продукция</a>
+            <a href="#delivery">Доставка</a>
+            <a href="#payment">Оплата</a>
+            <a href="#contact">Контакты</a>
+        </div>
+
+        <div class="footer__contacts">
+            <h3>Контакты</h3>
+            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <a href="mailto:info@alliance.ru">info@alliance.ru</a>
+            <p>г. Ваш город, ул. Примерная, д. 1</p>
+            <p>Пн–Пт: 09:00–18:00</p>
+        </div>
+    </div>
+
+    <div class="container footer__bottom">
+        <p>© 2026 ООО Альянс. Все права защищены.</p>
+        <a href="#">Политика конфиденциальности</a>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        padding: 40px 0 24px;
+        background: #0f172a;
+        color: #ffffff;
+    }
+
+    .footer__inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) 0.8fr 0.9fr;
+        gap: 32px;
+        padding-bottom: 28px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer__brand p,
+    .footer__contacts p,
+    .footer__bottom p,
+    .footer__bottom a,
+    .footer__nav a,
+    .footer__contacts a {
+        color: rgba(255, 255, 255, 0.76);
+    }
+
+    .footer__logo {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+
+    .footer__logo-mark {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        display: grid;
+        place-items: center;
+        background: var(--color-primary);
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 20px;
+        box-shadow: 0 10px 24px rgba(29, 78, 216, 0.25);
+    }
+
+    .footer__logo-text {
+        display: flex;
+        flex-direction: column;
+        line-height: 1.15;
+    }
+
+    .footer__logo-text strong {
+        font-size: 16px;
+        color: #ffffff;
+    }
+
+    .footer__logo-text small {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer__brand p {
+        margin: 0;
+        max-width: 420px;
+        line-height: 1.7;
+    }
+
+    .footer__nav,
+    .footer__contacts {
+        display: grid;
+        align-content: start;
+        gap: 10px;
+    }
+
+    .footer__nav h3,
+    .footer__contacts h3 {
+        margin: 0 0 8px;
+        font-size: 18px;
+        color: #ffffff;
+    }
+
+    .footer__nav a,
+    .footer__contacts a {
+        transition: color var(--transition);
+    }
+
+    .footer__nav a:hover,
+    .footer__contacts a:hover,
+    .footer__bottom a:hover {
+        color: #ffffff;
+    }
+
+    .footer__contacts p {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    .footer__bottom {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding-top: 18px;
+        font-size: 14px;
+    }
+
+    .footer__bottom p {
+        margin: 0;
+    }
+
+    @media (max-width: 1100px) {
+        .footer__inner {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .footer__brand {
+            grid-column: 1 / -1;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .footer {
+            padding: 32px 0 20px;
+        }
+
+        .footer__inner {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding-bottom: 22px;
+        }
+
+        .footer__bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            padding-top: 16px;
+        }
+    }
+</style>

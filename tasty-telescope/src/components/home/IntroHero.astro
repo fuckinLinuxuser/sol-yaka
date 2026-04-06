@@ -1,0 +1,291 @@
+<section class="intro-hero" id="hero">
+    <div class="intro-hero__sticky">
+        <div class="intro-hero__bg" aria-hidden="true"></div>
+
+        <div class="intro-hero__overlay" aria-hidden="true"></div>
+
+        <div class="intro-hero__title-wrap" aria-hidden="true">
+            <img
+                    src="/images/fabric_name.png"
+                    alt="ООО Альянс"
+                    class="intro-hero__title"
+                    id="heroTitle"
+                    loading="eager"
+                    decoding="async"
+            />
+        </div>
+
+        <div class="intro-hero__mountain-wrap" aria-hidden="true">
+            <img
+                    src="/images/salt_mountain.png"
+                    alt=""
+                    class="intro-hero__mountain"
+                    loading="eager"
+                    decoding="async"
+            />
+        </div>
+
+        <div class="intro-hero__scroll">
+            <span>Прокрутите вниз</span>
+            <div class="intro-hero__scroll-line"></div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const hero = document.getElementById("hero");
+    const title = document.getElementById("heroTitle");
+
+    if (hero && title) {
+        let ticking = false;
+
+        const updateHeroParallax = () => {
+            const rect = hero.getBoundingClientRect();
+            const heroScroll = Math.max(hero.offsetHeight - window.innerHeight, 1);
+            const passed = Math.min(Math.max(-rect.top, 0), heroScroll);
+            const progress = passed / heroScroll;
+
+            const eased = 1 - Math.pow(1 - progress, 2.2);
+
+            const moveY = eased * window.innerHeight * 0.72;
+            const opacity = 1 - eased * 0.12;
+            const scale = 1 - eased * 0.04;
+            const blur = eased * 1.2;
+
+            title.style.setProperty("--title-shift", `${moveY}px`);
+            title.style.setProperty("--title-opacity", `${opacity}`);
+            title.style.setProperty("--title-scale", `${scale}`);
+            title.style.setProperty("--title-blur", `${blur}px`);
+
+            ticking = false;
+        };
+
+        const requestTick = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateHeroParallax);
+                ticking = true;
+            }
+        };
+
+        updateHeroParallax();
+        window.addEventListener("scroll", requestTick, { passive: true });
+        window.addEventListener("resize", requestTick);
+        window.addEventListener("load", requestTick);
+    }
+</script>
+
+<style>
+    .intro-hero {
+        position: relative;
+        height: 180vh;
+        background: var(--color-bg-dark);
+    }
+
+    .intro-hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 180px;
+        pointer-events: none;
+        background: linear-gradient(
+                to bottom,
+                rgba(5, 7, 13, 0) 0%,
+                rgba(248, 250, 252, 0.85) 72%,
+                #f8fafc 100%
+        );
+        z-index: 5;
+    }
+
+    .intro-hero__sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+        isolation: isolate;
+    }
+
+    .intro-hero__bg {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background-image:
+                linear-gradient(
+                        to bottom,
+                        rgba(4, 7, 16, 0.16) 0%,
+                        rgba(4, 7, 16, 0.08) 35%,
+                        rgba(4, 7, 16, 0.12) 60%,
+                        rgba(4, 7, 16, 0.32) 100%
+                ),
+                url("/images/background_welcome_page.png");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        transform: scale(1.02);
+    }
+
+    .intro-hero__overlay {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background:
+                radial-gradient(circle at center top, rgba(255, 255, 255, 0.06), transparent 28%),
+                linear-gradient(
+                        to bottom,
+                        rgba(5, 7, 13, 0.04) 0%,
+                        rgba(5, 7, 13, 0.02) 30%,
+                        rgba(5, 7, 13, 0.12) 65%,
+                        rgba(5, 7, 13, 0.22) 100%
+                );
+    }
+
+    .intro-hero__title-wrap {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+    }
+
+    .intro-hero__title {
+        --title-shift: 0px;
+        --title-opacity: 1;
+        --title-scale: 1;
+        --title-blur: 0px;
+
+        position: absolute;
+        left: 50%;
+        top: clamp(4rem, 11vh, 8rem);
+        width: clamp(20rem, 62vw, 66rem);
+        max-width: 88vw;
+        height: auto;
+        transform: translate3d(-50%, var(--title-shift), 0) scale(var(--title-scale));
+        opacity: var(--title-opacity);
+        will-change: transform, opacity, filter;
+        backface-visibility: hidden;
+        filter:
+                blur(var(--title-blur))
+                drop-shadow(0 0.4rem 1.2rem rgba(0, 0, 0, 0.22));
+    }
+
+    .intro-hero__mountain-wrap {
+        position: absolute;
+        left: 50%;
+        bottom: -12vh;
+        transform: translateX(-50%);
+        z-index: 4;
+        width: min(140rem, 108vw);
+        pointer-events: none;
+    }
+
+    .intro-hero__mountain {
+        width: 100%;
+        height: auto;
+    }
+
+    .intro-hero__scroll {
+        position: absolute;
+        left: 50%;
+        bottom: 40px;
+        z-index: 6;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .intro-hero__scroll-line {
+        width: 1px;
+        height: 44px;
+        background: linear-gradient(
+                to bottom,
+                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.85)
+        );
+    }
+
+    @media (max-width: 1199px) {
+        .intro-hero {
+            height: 170vh;
+        }
+
+        .intro-hero__title {
+            width: clamp(18rem, 72vw, 56rem);
+            top: clamp(3.5rem, 10vh, 6.5rem);
+        }
+
+        .intro-hero__mountain-wrap {
+            width: 128vw;
+            bottom: -10vh;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .intro-hero {
+            height: 155vh;
+        }
+
+        .intro-hero__bg {
+            background-position: 56% center;
+            transform: scale(1.035);
+        }
+
+        .intro-hero__title {
+            width: min(92vw, 40rem);
+            top: clamp(2.5rem, 8vh, 4.5rem);
+        }
+
+        .intro-hero__mountain-wrap {
+            width: 170vw;
+            left: 52%;
+            bottom: -6vh;
+        }
+
+        .intro-hero__scroll {
+            bottom: 28px;
+        }
+    }
+
+    @media (min-width: 1600px) {
+        .intro-hero__title {
+            width: min(56rem, 54vw);
+            top: 9vh;
+        }
+
+        .intro-hero__mountain-wrap {
+            width: min(132rem, 96vw);
+            bottom: -14vh;
+        }
+    }
+
+    @media (max-width: 479px) {
+        .intro-hero {
+            height: 145vh;
+        }
+
+        .intro-hero__title {
+            width: 94vw;
+            top: 8vh;
+        }
+
+        .intro-hero__mountain-wrap {
+            width: 210vw;
+            left: 54%;
+            bottom: -4vh;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .intro-hero__title {
+            transform: translate3d(-50%, 0, 0) scale(1);
+            opacity: 1;
+            filter: drop-shadow(0 0.4rem 1.2rem rgba(0, 0, 0, 0.22));
+        }
+    }
+</style>
