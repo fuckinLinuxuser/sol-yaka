@@ -1,276 +1,404 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+
 const pageTitle = "Контакты";
+const pageDescription =
+    "Контакты ООО «Альянс»: телефоны, email, график работы и адрес компании в Пскове.";
+
+const contactItems = [
+    {
+        label: "Компания",
+        value: "ООО «Альянс»",
+        href: "",
+    },
+    {
+        label: "Телефон",
+        value: "8 (8112) 70-25-29",
+        href: "tel:+78112702529",
+    },
+    {
+        label: "Мобильный",
+        value: "8 (921) 508-01-90",
+        href: "tel:+79215080190",
+    },
+    {
+        label: "Email",
+        value: "pskov@e-salt.ru",
+        href: "mailto:pskov@e-salt.ru",
+    },
+    {
+        label: "Адрес",
+        value: "Псков, ул. Фрунзе, д. 32А",
+        href: "",
+    },
+    {
+        label: "График работы",
+        value: "Пн–Пт: 08:00–17:00",
+        href: "",
+    },
+];
+
+const mapWidgetUrl =
+    "https://yandex.ru/map-widget/v1/?um=constructor%3Af0be3ae20fe7537ff998261033af698f6bfbfae4789c98233f848961a3f5bd1b&source=constructor";
+
+const mapPageUrl =
+    "https://yandex.com/maps/25/pskov/?from=mapframe&ll=28.384000%2C57.756499&mode=usermaps&source=mapframe&um=constructor%3Af0be3ae20fe7537ff998261033af698f6bfbfae4789c98233f848961a3f5bd1b&utm_source=mapframe&z=16";
 ---
 
-<section class="contacts-page">
-    <div class="contacts-page__container">
-        <div class="contacts-page__header">
-            <p class="contacts-page__eyebrow">Контакты</p>
-            <h1 class="contacts-page__title">{pageTitle}</h1>
-            <p class="contacts-page__subtitle">
-                Свяжитесь с нами удобным способом. Поможем с подбором продукции,
-                условиями поставки и расчётом заказа.
-            </p>
-        </div>
+<BaseLayout title={`${pageTitle} | ООО «Альянс»`} description={pageDescription}>
+    <Header />
 
-        <div class="contacts-page__grid">
-            <div class="contacts-card">
-                <div class="contacts-card__top">
-                    <h2 class="contacts-card__title">Контактная информация</h2>
-                    <p class="contacts-card__text">
-                        Работаем с оптовыми заказами и отвечаем на вопросы по ассортименту,
-                        логистике и условиям сотрудничества.
-                    </p>
-                </div>
+    <main class="contacts-page">
+        <section class="contacts-hero">
+            <div class="container">
+                <p class="contacts-hero__eyebrow">Контакты</p>
+                <h1 class="contacts-hero__title">Свяжитесь с ООО «Альянс»</h1>
+                <p class="contacts-hero__text">
+                    Поможем с подбором продукции, расчётом заказа, условиями поставки и
+                    ответим на вопросы по сотрудничеству.
+                </p>
+            </div>
+        </section>
 
-                <div class="contacts-list">
-                    <div class="contacts-item">
-                        <span class="contacts-item__label">Компания</span>
-                        <p class="contacts-item__value">ООО «Альянс»</p>
+        <section class="contacts-section">
+            <div class="container">
+                <div class="contacts-grid">
+                    <div class="contacts-card">
+                        <div class="contacts-card__header">
+                            <p class="contacts-card__eyebrow">Контактная информация</p>
+                            <h2 class="contacts-card__title">Работаем с оптовыми заказами</h2>
+                            <p class="contacts-card__text">
+                                Консультируем по ассортименту, логистике, срокам и формату
+                                поставок для бизнеса и предприятий.
+                            </p>
+                        </div>
+
+                        <div class="contacts-list">
+                            {contactItems.map((item) => (
+                                    <div class="contacts-item">
+                                        <span class="contacts-item__label">{item.label}</span>
+
+                                        {item.href ? (
+                                                <a
+                                                        class="contacts-item__value contacts-item__value--link"
+                                                        href={item.href}
+                                                >
+                                                    {item.value}
+                                                </a>
+                                        ) : (
+                                                <span class="contacts-item__value">{item.value}</span>
+                                        )}
+                                    </div>
+                            ))}
+                        </div>
+
+                        <div class="contacts-actions">
+                            <a
+                                    class="contacts-button contacts-button--primary"
+                                    href="tel:+78112702529"
+                            >
+                                Позвонить
+                            </a>
+
+                            <a
+                                    class="contacts-button contacts-button--secondary"
+                                    href="mailto:pskov@e-salt.ru"
+                            >
+                                Написать на почту
+                            </a>
+                        </div>
                     </div>
 
-                    <div class="contacts-item">
-                        <span class="contacts-item__label">Телефон</span>
-                        <a class="contacts-item__link" href="tel:+70000000000">
-                            +7 (000) 000-00-00
-                        </a>
-                    </div>
+                    <div class="contacts-card contacts-card--map">
+                        <div class="contacts-card__header">
+                            <p class="contacts-card__eyebrow">Карта</p>
+                            <h2 class="contacts-card__title">Мы на Яндекс Картах</h2>
+                            <p class="contacts-card__text">
+                                Откройте карту, чтобы быстро построить маршрут до компании.
+                            </p>
+                        </div>
 
-                    <div class="contacts-item">
-                        <span class="contacts-item__label">Email</span>
-                        <a class="contacts-item__link" href="mailto:info@example.ru">
-                            info@example.ru
-                        </a>
-                    </div>
-
-                    <div class="contacts-item">
-                        <span class="contacts-item__label">Адрес</span>
-                        <p class="contacts-item__value">Псков, ул. Примерная, д. 1</p>
-                    </div>
-
-                    <div class="contacts-item">
-                        <span class="contacts-item__label">График работы</span>
-                        <p class="contacts-item__value">Пн–Пт: 09:00–18:00</p>
+                        <div class="contacts-map">
+                            <iframe
+                                    src={mapWidgetUrl}
+                                    title="Карта расположения ООО Альянс"
+                                    width="100%"
+                                    height="520"
+                                    frameborder="0"
+                                    allowfullscreen
+                                    loading="lazy"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+    </main>
 
-            <div class="map-card">
-                <div class="map-card__header">
-                    <h2 class="map-card__title">Мы на карте</h2>
-                    <p class="map-card__text">
-                        Точка компании на Яндекс Картах для быстрого построения маршрута.
-                    </p>
-                </div>
-
-                <div class="map-card__frame">
-                    <iframe
-                            src="https://yandex.ru/map-widget/v1/?um=constructor%3Af0be3ae20fe7537ff998261033af698f6bfbfae4789c98233f848961a3f5bd1b&source=constructor"
-                            width="100%"
-                            height="100%"
-                            frameborder="0"
-                            allowfullscreen
-                            loading="lazy"
-                            title="Карта с местоположением компании"
-                    ></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    <Footer />
+</BaseLayout>
 
 <style>
     .contacts-page {
-        padding: 72px 0 96px;
         background:
-                radial-gradient(circle at top left, rgba(111, 126, 154, 0.08), transparent 28%),
-                linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+                radial-gradient(circle at top, rgba(38, 92, 160, 0.08), transparent 32%),
+                linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+        color: #142033;
     }
 
-    .contacts-page__container {
-        width: min(1200px, calc(100% - 32px));
+    .container {
+        width: min(1180px, calc(100% - 32px));
         margin: 0 auto;
     }
 
-    .contacts-page__header {
-        max-width: 760px;
-        margin-bottom: 40px;
+    .contacts-hero {
+        padding: 72px 0 28px;
     }
 
-    .contacts-page__eyebrow {
+    .contacts-hero__eyebrow {
         margin: 0 0 12px;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
         font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        color: #5b6b84;
+        color: #3f6ea5;
     }
 
-    .contacts-page__title {
+    .contacts-hero__title {
         margin: 0 0 16px;
-        font-size: clamp(2.2rem, 4vw, 3.4rem);
-        line-height: 1.05;
-        color: #0f172a;
+        max-width: 720px;
+        font-size: clamp(2rem, 4vw, 3.5rem);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+        color: #0f1728;
     }
 
-    .contacts-page__subtitle {
+    .contacts-hero__text {
         margin: 0;
+        max-width: 760px;
         font-size: 1.05rem;
         line-height: 1.7;
-        color: #475569;
+        color: #526176;
     }
 
-    .contacts-page__grid {
+    .contacts-section {
+        padding: 0 0 88px;
+    }
+
+    .contacts-grid {
         display: grid;
-        grid-template-columns: minmax(320px, 420px) minmax(0, 1fr);
+        grid-template-columns: minmax(320px, 460px) minmax(320px, 1fr);
         gap: 28px;
-        align-items: stretch;
-    }
-
-    .contacts-card,
-    .map-card {
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(148, 163, 184, 0.18);
-        border-radius: 28px;
-        box-shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
-        backdrop-filter: blur(10px);
+        align-items: start;
     }
 
     .contacts-card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(21, 40, 70, 0.08);
+        border-radius: 28px;
+        box-shadow: 0 24px 60px rgba(15, 23, 40, 0.08);
         padding: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 28px;
+        backdrop-filter: blur(8px);
     }
 
-    .contacts-card__top {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+    .contacts-card--map {
+        overflow: hidden;
     }
 
-    .contacts-card__title,
-    .map-card__title {
-        margin: 0;
-        font-size: 1.45rem;
+    .contacts-card__header {
+        margin-bottom: 24px;
+    }
+
+    .contacts-card__eyebrow {
+        margin: 0 0 10px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #5f7ea6;
+    }
+
+    .contacts-card__title {
+        margin: 0 0 12px;
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
         line-height: 1.2;
-        color: #0f172a;
+        color: #0f1728;
     }
 
-    .contacts-card__text,
-    .map-card__text {
+    .contacts-card__text {
         margin: 0;
+        font-size: 0.98rem;
         line-height: 1.7;
-        color: #475569;
+        color: #5a6779;
     }
 
     .contacts-list {
         display: grid;
-        gap: 18px;
+        gap: 16px;
     }
 
     .contacts-item {
-        padding: 18px 20px;
-        border-radius: 20px;
-        background: #f8fafc;
-        border: 1px solid rgba(148, 163, 184, 0.14);
+        display: grid;
+        gap: 6px;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(21, 40, 70, 0.08);
+    }
+
+    .contacts-item:first-child {
+        padding-top: 0;
+    }
+
+    .contacts-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .contacts-item__label {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 0.78rem;
+        font-size: 0.86rem;
         font-weight: 700;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         text-transform: uppercase;
-        color: #64748b;
+        color: #6e7f95;
     }
 
     .contacts-item__value {
-        margin: 0;
-        font-size: 1rem;
-        line-height: 1.6;
-        color: #0f172a;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        color: #142033;
     }
 
-    .contacts-item__link {
-        font-size: 1rem;
-        font-weight: 600;
-        line-height: 1.6;
-        color: #0f172a;
+    .contacts-item__value--link {
         text-decoration: none;
-        transition: color 0.2s ease, opacity 0.2s ease;
+        color: #1d4f91;
+        transition:
+                color 0.2s ease,
+                opacity 0.2s ease;
     }
 
-    .contacts-item__link:hover {
-        color: #1d4ed8;
+    .contacts-item__value--link:hover {
+        color: #14396b;
+        opacity: 0.9;
     }
 
-    .map-card {
-        padding: 24px;
+    .contacts-actions {
         display: flex;
-        flex-direction: column;
-        gap: 20px;
-        min-height: 100%;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 28px;
     }
 
-    .map-card__header {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .contacts-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+        padding: 0 22px;
+        border-radius: 14px;
+        text-decoration: none;
+        font-weight: 700;
+        transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease;
     }
 
-    .map-card__frame {
-        position: relative;
-        min-height: 520px;
+    .contacts-button:hover {
+        transform: translateY(-1px);
+    }
+
+    .contacts-button--primary {
+        background: #1d4f91;
+        color: #ffffff;
+        box-shadow: 0 14px 32px rgba(29, 79, 145, 0.22);
+    }
+
+    .contacts-button--primary:hover {
+        background: #163f73;
+    }
+
+    .contacts-button--secondary {
+        border: 1px solid rgba(29, 79, 145, 0.18);
+        background: #ffffff;
+        color: #1d4f91;
+    }
+
+    .contacts-button--secondary:hover {
+        border-color: rgba(29, 79, 145, 0.34);
+        background: #f4f8fc;
+    }
+
+    .contacts-map {
         overflow: hidden;
-        border-radius: 24px;
-        background: #dbe4f0;
-        border: 1px solid rgba(148, 163, 184, 0.18);
+        border-radius: 22px;
+        height: 520px;
+        border: 1px solid rgba(21, 40, 70, 0.08);
+        background: #eef3f9;
     }
 
-    .map-card__frame iframe {
-        position: absolute;
-        inset: 0;
+    .contacts-map iframe {
+        display: block;
         width: 100%;
         height: 100%;
+        border: 0;
+    }
+
+    .contacts-map__link {
+        display: inline-flex;
+        align-items: center;
+        margin-top: 16px;
+        width: fit-content;
+        text-decoration: none;
+        font-weight: 700;
+        color: #1d4f91;
+    }
+
+    .contacts-map__link:hover {
+        color: #14396b;
     }
 
     @media (max-width: 960px) {
-        .contacts-page__grid {
+        .contacts-hero {
+            padding-top: 56px;
+        }
+
+        .contacts-grid {
             grid-template-columns: 1fr;
         }
 
-        .map-card__frame {
-            min-height: 420px;
+        .contacts-map {
+            height: 420px;
         }
     }
 
     @media (max-width: 640px) {
-        .contacts-page {
-            padding: 56px 0 72px;
+        .container {
+            width: min(100% - 24px, 1180px);
         }
 
-        .contacts-card,
-        .map-card {
-            border-radius: 22px;
+        .contacts-hero {
+            padding-top: 40px;
+            padding-bottom: 20px;
         }
 
         .contacts-card {
-            padding: 24px;
+            padding: 22px 18px;
+            border-radius: 22px;
         }
 
-        .map-card {
-            padding: 18px;
+        .contacts-actions {
+            flex-direction: column;
         }
 
-        .contacts-item {
-            padding: 16px;
-            border-radius: 16px;
+        .contacts-button {
+            width: 100%;
         }
 
-        .map-card__frame {
-            min-height: 340px;
+        .contacts-map {
+            height: 340px;
             border-radius: 18px;
         }
     }
