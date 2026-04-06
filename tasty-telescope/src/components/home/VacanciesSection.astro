@@ -1,0 +1,116 @@
+---
+const vacancies = [
+    {
+        title: "Менеджер B2B-продаж",
+        text: "Работа с входящими запросами, сопровождение клиентов, развитие базы и переговоры по поставкам.",
+    },
+    {
+        title: "Координатор логистики",
+        text: "Организация отгрузок, контроль сроков, взаимодействие со складами, перевозчиками и клиентами.",
+    },
+    {
+        title: "Специалист по клиентскому сопровождению",
+        text: "Поддержка заказчиков, уточнение параметров заявок, деловая переписка и контроль документооборота.",
+    },
+];
+---
+
+<section class="section vacancies-section" id="vacancies">
+    <div class="container vacancies-section__grid">
+        <div class="vacancies-section__content">
+            <div class="section-head vacancies-section__head">
+                <span class="section-kicker">Вакансии</span>
+                <h2>Блок для найма и деловой коммуникации</h2>
+                <p>
+                    В старом сайте раздел “Вакансии” есть в навигации, но на главной он не
+                    раскрывает смысла. Здесь он оформлен как полноценный B2B-блок:
+                    коротко, аккуратно и с понятным действием.
+                </p>
+            </div>
+
+            <p class="vacancies-section__text">
+                Секция подходит и для реального найма, и для деловой коммуникации с
+                кандидатами. Её легко наполнять реальными ролями без изменения общей
+                архитектуры страницы.
+            </p>
+
+            <a
+                    class="btn btn--primary"
+                    href="mailto:pskov@e-salt.ru?subject=Отклик по вакансии"
+            >
+                Отправить отклик
+            </a>
+        </div>
+
+        <div class="vacancies-section__list">
+            {vacancies.map((item) => (
+                    <article class="vacancy-card card">
+                        <h3>{item.title}</h3>
+                        <p>{item.text}</p>
+                    </article>
+            ))}
+        </div>
+    </div>
+</section>
+
+<style>
+    .vacancies-section {
+        scroll-margin-top: 104px;
+    }
+
+    .vacancies-section__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+        gap: 28px;
+        align-items: start;
+    }
+
+    .vacancies-section__head {
+        margin-bottom: 18px;
+    }
+
+    .vacancies-section__text {
+        margin: 0 0 24px;
+        color: #475569;
+        line-height: 1.75;
+    }
+
+    .vacancies-section__list {
+        display: grid;
+        gap: 18px;
+    }
+
+    .vacancy-card {
+        padding: 24px;
+    }
+
+    .vacancy-card h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        color: #0f172a;
+    }
+
+    .vacancy-card p {
+        margin: 0;
+        color: #475569;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+        .vacancies-section__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .vacancy-card {
+            padding: 20px;
+        }
+
+        .vacancy-card h3 {
+            font-size: 20px;
+        }
+    }
+</style>

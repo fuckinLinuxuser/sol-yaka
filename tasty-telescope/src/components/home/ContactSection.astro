@@ -1,217 +1,243 @@
-<section class="section contact-section" id="contact">
-    <div class="container contact-section__inner">
-        <div class="contact-section__content">
-            <div class="section-head contact-section__head">
-                <span class="section-kicker">Контакты и заявка</span>
-                <h2>Оставьте заявку — подготовим предложение под ваш объём и задачу</h2>
-                <p>
-                    Подберём продукцию, рассчитаем стоимость, уточним сроки поставки и
-                    предложим удобный формат отгрузки для вашего бизнеса.
-                </p>
-            </div>
-
-            <div class="contact-section__info">
-                <div class="contact-item">
-                    <span class="contact-item__label">Телефон</span>
-                    <a href="tel:+70000000000" class="contact-item__value">+7 (000) 000-00-00</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-item__label">E-mail</span>
-                    <a href="mailto:info@alliance.ru" class="contact-item__value">info@alliance.ru</a>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-item__label">Адрес</span>
-                    <p class="contact-item__text">г. Ваш город, ул. Примерная, д. 1</p>
-                </div>
-
-                <div class="contact-item">
-                    <span class="contact-item__label">Режим работы</span>
-                    <p class="contact-item__text">Пн–Пт: 09:00–18:00</p>
-                </div>
-            </div>
+<section class="section section--soft contacts-section" id="contacts">
+    <div class="container">
+        <div class="section-head contacts-section__head">
+            <span class="section-kicker">Контакты</span>
+            <h2>Связаться по поставке можно напрямую</h2>
+            <p>
+                Блок без лишней перегрузки: телефон, email, адрес и рабочий график в
+                одном месте. Для B2B-сайта это удобнее, чем прятать контакты глубоко в
+                футере — пользователь сразу видит, куда писать и звонить.
+            </p>
         </div>
 
-        <form class="contact-form">
-            <div class="contact-form__grid">
-                <label class="field">
-                    <span class="field__label">Имя</span>
-                    <input type="text" name="name" placeholder="Ваше имя" />
-                </label>
+        <div class="contacts-section__grid">
+            <div class="contacts-section__cards">
+                <article class="contacts-card card">
+                    <span class="contacts-card__label">Телефоны</span>
+                    <div class="contacts-card__value contacts-card__value--stack">
+                        <a href="tel:+78112702529">8 (8112) 70-25-29</a>
+                        <a href="tel:+79215080190">8 (921) 508-01-90</a>
+                    </div>
+                    <p>Для расчёта поставки, согласования объёма и уточнения условий.</p>
+                </article>
 
-                <label class="field">
-                    <span class="field__label">Телефон</span>
-                    <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" />
-                </label>
+                <article class="contacts-card card">
+                    <span class="contacts-card__label">E-mail</span>
+                    <div class="contacts-card__value">
+                        <a href="mailto:pskov@e-salt.ru">pskov@e-salt.ru</a>
+                    </div>
+                    <p>Удобно для запроса прайса, реквизитов и деловой переписки.</p>
+                </article>
 
-                <label class="field">
-                    <span class="field__label">Компания</span>
-                    <input type="text" name="company" placeholder="Название компании" />
-                </label>
+                <article class="contacts-card card">
+                    <span class="contacts-card__label">Адрес</span>
+                    <div class="contacts-card__value">
+                        г. Псков, ул. Фрунзе, д. 32 А
+                    </div>
+                    <p>Фактический контактный адрес компании.</p>
+                </article>
 
-                <label class="field field--full">
-                    <span class="field__label">Комментарий</span>
-                    <textarea
-                            name="comment"
-                            rows="5"
-                            placeholder="Какая продукция и какой объём вас интересуют?"
-                    ></textarea>
-                </label>
+                <article class="contacts-card card">
+                    <span class="contacts-card__label">Режим работы</span>
+                    <div class="contacts-card__value">
+                        Пн-Пт: 08:00 – 17:00
+                    </div>
+                    <p>В рабочее время проще всего быстро согласовать поставку и отгрузку.</p>
+                </article>
             </div>
 
-            <button type="submit" class="btn btn--primary contact-form__submit">
-                Отправить заявку
-            </button>
+            <aside class="contacts-panel card">
+                <h3>Как удобнее начать диалог</h3>
 
-            <p class="contact-form__note">
-                Нажимая кнопку, вы соглашаетесь на обработку персональных данных.
-            </p>
-        </form>
+                <ol class="contacts-panel__steps">
+                    <li>
+                        <strong>Опишите задачу</strong>
+                        <span>
+              Нужен тип продукции, примерный объём, регион поставки и желаемые
+              сроки.
+            </span>
+                    </li>
+
+                    <li>
+                        <strong>Уточним условия</strong>
+                        <span>
+              Согласуем формат отгрузки, удобный канал связи и базовые условия
+              сотрудничества.
+            </span>
+                    </li>
+
+                    <li>
+                        <strong>Подготовим предложение</strong>
+                        <span>
+              После уточнения параметров можно быстро перейти к коммерческому
+              предложению или рабочему диалогу по закупке.
+            </span>
+                    </li>
+                </ol>
+
+                <div class="contacts-panel__actions">
+                    <a class="btn btn--primary" href="tel:+78112702529">
+                        Позвонить сейчас
+                    </a>
+
+                    <a
+                            class="btn btn--secondary"
+                            href="mailto:pskov@e-salt.ru?subject=Запрос по поставке соли"
+                    >
+                        Написать на почту
+                    </a>
+                </div>
+            </aside>
+        </div>
     </div>
 </section>
 
 <style>
-    .contact-section {
-        background: #ffffff;
+    .contacts-section {
+        scroll-margin-top: 104px;
     }
 
-    .contact-section__inner {
+    .contacts-section__head {
+        margin-bottom: 34px;
+    }
+
+    .contacts-section__grid {
         display: grid;
-        grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
-        gap: 24px;
+        grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+        gap: 28px;
         align-items: start;
     }
 
-    .contact-section__head {
-        margin-bottom: 28px;
-    }
-
-    .contact-section__info {
+    .contacts-section__cards {
         display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 18px;
     }
 
-    .contact-item {
-        padding: 22px;
-        border-radius: var(--radius-md);
-        background: var(--color-bg-soft);
-        border: 1px solid var(--color-border);
+    .contacts-card {
+        padding: 24px;
     }
 
-    .contact-item__label {
-        display: block;
-        margin-bottom: 8px;
-        font-size: 14px;
+    .contacts-card__label {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        margin-bottom: 14px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(29, 78, 216, 0.08);
+        color: #1d4ed8;
+        font-size: 13px;
         font-weight: 700;
-        color: var(--color-text-muted);
     }
 
-    .contact-item__value {
-        font-size: 20px;
+    .contacts-card__value {
+        font-size: 22px;
+        line-height: 1.25;
         font-weight: 800;
-        color: var(--color-text);
+        color: #0f172a;
+        letter-spacing: -0.02em;
     }
 
-    .contact-item__text {
-        margin: 0;
-        font-size: 16px;
-        line-height: 1.6;
-        color: var(--color-text-soft);
-    }
-
-    .contact-form {
-        padding: 28px;
-        border-radius: var(--radius-lg);
-        background: #ffffff;
-        border: 1px solid var(--color-border);
-        box-shadow: var(--shadow-md);
-    }
-
-    .contact-form__grid {
+    .contacts-card__value--stack {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-    }
-
-    .field {
-        display: flex;
-        flex-direction: column;
         gap: 8px;
     }
 
-    .field--full {
-        grid-column: 1 / -1;
-    }
-
-    .field__label {
-        font-size: 14px;
-        font-weight: 700;
-        color: #334155;
-    }
-
-    .field input,
-    .field textarea {
-        width: 100%;
-        border: 1px solid #cbd5e1;
-        border-radius: 14px;
-        padding: 14px 16px;
-        outline: none;
-        background: #ffffff;
-        color: var(--color-text);
-        transition: border-color var(--transition), box-shadow var(--transition);
-    }
-
-    .field input::placeholder,
-    .field textarea::placeholder {
-        color: #94a3b8;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-        border-color: var(--color-primary);
-        box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.1);
-    }
-
-    .field textarea {
-        resize: vertical;
-        min-height: 140px;
-    }
-
-    .contact-form__submit {
-        width: 100%;
-        margin-top: 20px;
-    }
-
-    .contact-form__note {
+    .contacts-card p {
         margin: 14px 0 0;
-        font-size: 14px;
-        line-height: 1.6;
-        color: var(--color-text-muted);
+        color: #475569;
+        line-height: 1.7;
+    }
+
+    .contacts-panel {
+        padding: 28px;
+    }
+
+    .contacts-panel h3 {
+        margin: 0 0 18px;
+        font-size: 28px;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        color: #0f172a;
+    }
+
+    .contacts-panel__steps {
+        display: grid;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        counter-reset: contact-steps;
+    }
+
+    .contacts-panel__steps li {
+        position: relative;
+        display: grid;
+        gap: 6px;
+        padding: 0 0 0 54px;
+        counter-increment: contact-steps;
+    }
+
+    .contacts-panel__steps li::before {
+        content: counter(contact-steps);
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        background: #0f172a;
+        color: #ffffff;
+        font-weight: 800;
+    }
+
+    .contacts-panel__steps strong {
+        font-size: 18px;
+        color: #0f172a;
+    }
+
+    .contacts-panel__steps span {
+        color: #475569;
+        line-height: 1.7;
+    }
+
+    .contacts-panel__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 24px;
     }
 
     @media (max-width: 1100px) {
-        .contact-section__inner {
+        .contacts-section__grid {
             grid-template-columns: 1fr;
         }
     }
 
     @media (max-width: 767px) {
-        .contact-form {
-            padding: 22px;
-        }
-
-        .contact-form__grid {
+        .contacts-section__cards {
             grid-template-columns: 1fr;
-            gap: 16px;
         }
 
-        .field--full {
-            grid-column: auto;
+        .contacts-card,
+        .contacts-panel {
+            padding: 20px;
         }
 
-        .contact-item__value {
-            font-size: 18px;
+        .contacts-card__value {
+            font-size: 20px;
+        }
+
+        .contacts-panel h3 {
+            font-size: 24px;
+        }
+
+        .contacts-panel__actions {
+            flex-direction: column;
         }
     }
 </style>

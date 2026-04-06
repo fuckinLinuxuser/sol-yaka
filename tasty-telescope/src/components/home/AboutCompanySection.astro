@@ -1,0 +1,135 @@
+<section class="section about-company" id="about">
+    <div class="container about-company__grid">
+        <div class="about-company__content">
+            <div class="section-head">
+                <span class="section-kicker">О компании</span>
+                <h2>Поставщик соли для бизнеса, производства и регулярных закупок</h2>
+                <p>
+                    ООО «Альянс» работает в B2B-сегменте и строит поставки так, чтобы
+                    закупка была понятной, быстрой и удобной для предприятий, торговых
+                    компаний, складов и служб эксплуатации.
+                </p>
+            </div>
+
+            <div class="about-company__text">
+                <p>
+                    Компания помогает бизнесу закупать пищевую, техническую и
+                    таблетированную соль, а также противогололедные реагенты под
+                    конкретную задачу: производство, перепродажу, инженерные системы,
+                    водоподготовку или сезонную эксплуатацию объектов.
+                </p>
+
+                <p>
+                    Основной акцент — не просто на продаже позиции, а на сборке удобного
+                    решения: подобрать нужный тип продукции, согласовать объём, формат
+                    фасовки, график отгрузки и логистику так, чтобы клиенту было проще
+                    работать снабжением и планировать закупки.
+                </p>
+
+                <p>
+                    Для B2B-клиента это означает меньше лишних согласований, больше
+                    предсказуемости по срокам и понятную коммуникацию по документам,
+                    условиям и дальнейшему сопровождению поставки.
+                </p>
+            </div>
+        </div>
+
+        <aside class="about-company__aside">
+            <article class="about-company__fact card">
+                <strong>Широкий ассортимент</strong>
+                <p>
+                    От пищевой соли и производственных решений до таблетированной соли и
+                    сезонных реагентов.
+                </p>
+            </article>
+
+            <article class="about-company__fact card">
+                <strong>B2B-подход к поставке</strong>
+                <p>
+                    Работа с юридическими лицами, понятные условия сотрудничества и
+                    удобный сценарий закупки.
+                </p>
+            </article>
+
+            <article class="about-company__fact card">
+                <strong>Логистика под задачу</strong>
+                <p>
+                    Можно обсуждать объём, регион, формат отгрузки, регулярность поставок
+                    и схему взаимодействия.
+                </p>
+            </article>
+
+            <article class="about-company__fact card">
+                <strong>Упор на надёжность</strong>
+                <p>
+                    Важны не только цена и наличие, но и стабильность, сроки, документы и
+                    сопровождение клиента на каждом этапе.
+                </p>
+            </article>
+        </aside>
+    </div>
+</section>
+
+<style>
+    .about-company {
+        scroll-margin-top: 104px;
+    }
+
+    .about-company__grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+        gap: 32px;
+        align-items: start;
+    }
+
+    .about-company__text {
+        display: grid;
+        gap: 18px;
+    }
+
+    .about-company__text p {
+        margin: 0;
+        color: #475569;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .about-company__aside {
+        display: grid;
+        gap: 18px;
+    }
+
+    .about-company__fact {
+        padding: 24px;
+    }
+
+    .about-company__fact strong {
+        display: block;
+        margin-bottom: 10px;
+        font-size: 19px;
+        line-height: 1.2;
+        color: #0f172a;
+    }
+
+    .about-company__fact p {
+        margin: 0;
+        color: #475569;
+        line-height: 1.7;
+    }
+
+    @media (max-width: 1024px) {
+        .about-company__grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .about-company__text p {
+            font-size: 16px;
+        }
+
+        .about-company__fact {
+            padding: 20px;
+        }
+    }
+</style>

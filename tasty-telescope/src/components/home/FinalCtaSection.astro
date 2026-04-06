@@ -1,0 +1,114 @@
+<section class="section final-cta-section">
+    <div class="container">
+        <div class="final-cta card">
+            <div class="final-cta__content">
+                <span class="final-cta__kicker">Финальный CTA</span>
+                <h2>Нужен прайс, консультация или подбор поставки под ваш объём?</h2>
+                <p>
+                    Сайт должен не просто выглядеть лучше, а доводить пользователя до
+                    контакта. Поэтому последним блоком идёт сильный CTA без визуального
+                    шума и с понятными действиями.
+                </p>
+            </div>
+
+            <div class="final-cta__actions">
+                <a class="btn btn--primary" href="tel:+78112702529">
+                    Позвонить
+                </a>
+
+                <a
+                        class="btn btn--secondary"
+                        href="mailto:pskov@e-salt.ru?subject=Запрос на поставку соли"
+                >
+                    Написать на почту
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .final-cta-section {
+        padding-top: 0;
+    }
+
+    .final-cta {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 28px;
+        align-items: center;
+        padding: 32px;
+        border: 1px solid rgba(30, 41, 59, 0.08);
+        background:
+                radial-gradient(circle at top left, rgba(29, 78, 216, 0.14), transparent 36%),
+                linear-gradient(135deg, #0f172a, #111827);
+        color: #ffffff;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+    }
+
+    .final-cta__kicker {
+        display: inline-flex;
+        align-items: center;
+        min-height: 34px;
+        margin-bottom: 14px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    .final-cta h2 {
+        margin: 0 0 14px;
+        font-size: clamp(28px, 4vw, 42px);
+        line-height: 1.08;
+        letter-spacing: -0.03em;
+    }
+
+    .final-cta p {
+        margin: 0;
+        max-width: 760px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.75;
+    }
+
+    .final-cta__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-end;
+    }
+
+    .final-cta .btn--secondary {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+    }
+
+    .final-cta .btn--secondary:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.22);
+    }
+
+    @media (max-width: 1024px) {
+        .final-cta {
+            grid-template-columns: 1fr;
+        }
+
+        .final-cta__actions {
+            justify-content: flex-start;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .final-cta {
+            padding: 24px 20px;
+            gap: 22px;
+        }
+
+        .final-cta__actions {
+            flex-direction: column;
+        }
+    }
+</style>
